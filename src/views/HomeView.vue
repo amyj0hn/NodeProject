@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <div class="home-sec">
+    <h2>Welcome to Amigurumi!</h2>
   </div>
 </template>
 
@@ -16,3 +15,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.home-sec{
+  margin-top: 75px;
+  background-color: #F8E3E7;
+  height: 100vh;
+}
+</style>

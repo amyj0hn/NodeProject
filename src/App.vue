@@ -2,6 +2,7 @@
   <div id="app">
     <NavComp />
     <router-view/>
+    <section class="home-sec"></section>
   </div>
 </template>
 
