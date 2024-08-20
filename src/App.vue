@@ -2,16 +2,19 @@
   <div id="app">
     <NavComp />
     <router-view/>
-    <section class="home-sec"></section>
+    <FooterComp/>
+    <section id="home"></section>
   </div>
 </template>
 
 <script>
+import FooterComp from './components/FooterComp.vue';
 import NavComp from './components/NavComp.vue'
 
 export default {
   components: {
-    NavComp
+    NavComp,
+    FooterComp
   }
 }
 </script>
@@ -23,5 +26,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #F8E3E7;
 }
+
+
 </style>
