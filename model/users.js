@@ -1,5 +1,5 @@
 import { connection as db } from "../config/index.js";
-import { createToken } from "../middleware/Authenticate.js";
+import { createToken } from "../middleware/AuthenticateUser.js";
 import { compare, hash } from "bcrypt";
 
 class Users{
@@ -35,7 +35,7 @@ class Users{
 
     FetchUser(req,res){
         try {
-            const strQry = `
+            const sqlQry = `
             SELECT 
             userID, 
             firstName, 
@@ -48,8 +48,8 @@ class Users{
             UserProfile
             WHERE userID = '${req.params.id}';
                 `;
-            db.query(strQry, (err, result) => {
-              if (err) throw new Error("We ran into an issue retreiving a single user.");
+            db.query(sqlQry, (err, result) => {
+              if (err) throw new Error(err);
               res.json({
                 status: res.statusCode,
                 result: result[0],
@@ -66,21 +66,22 @@ class Users{
     async RegisterUser(req,res){
         try {
             let data = req.body;
-            data.password = await hash(data.password, 12);
+            data.userPass = await hash(data.userPass, 12);
 
             // payload
             let user = {
               emailAdd: data.emailAdd,
-              password: data.password,
+              password: data.userPass,
             };
             let reqQuery = `
                 INSERT INTO Users SET ?;
                 `;
-            db.query(reqQuery, [data], (err) => {
+            db.query(reqQuery, [data], (err, results) => {
               if (err) {
+                console.log(err);
+                
                 res.json({
-                  status: res,
-                  statusCode,
+                  status: res.statusCode,
                   msg: "This email already exists👀",
                 });
               } else {
@@ -97,13 +98,13 @@ class Users{
     async UpdateUser(req,res){
         try {
             let data = req.body;
-            if (data.pwd) {
-              data.pwd = await hash(data.pwd, 12);
+            if (data.userPass) {
+              data.userPass = await hash(data.userPass, 12);
             }
-            const strQry = `
+            const sqlQry = `
                 UPDATE Users SET ? WHERE userID = '${req.params.id}';
                 `;
-            db.query(strQry, [data], (err) => {
+            db.query(sqlQry, [data], (err) => {
               if (err) throw new Error("Unable to update user");
               res.json({
                 status: res.statusCode,
@@ -120,10 +121,10 @@ class Users{
 
     DeleteUser(req,res){
         try {
-            const strQry = `
+            const sqlQry = `
                 DELETE FROM Users WHERE userID = '${req.params.id}';`;
         
-            db.query(strQry, (err) => {
+            db.query(sqlQry, (err) => {
               if (err)
                 throw new Error("To delete a user, please review your delete query");
               res.json({
@@ -139,57 +140,57 @@ class Users{
           }
     }
 
-    async Login(req,res){
-        try {
-            const { emailAdd, password } = req.body;
-            const strQry = `
-            SELECT 
-            userID, 
-            firstName, 
-            lastName, 
-            userAge, 
-            Gender, 
-            userRole, 
-            emailAdd, 
-            userPass, 
-            UserProfile 
-            FROM Users 
-            WHERE emailAdd = '${emailAdd}';`;
+    // async Login(req,res){
+    //     try {
+    //         const { emailAdd, userPass } = req.body;
+    //         const sqlQry = `
+    //         SELECT 
+    //         userID, 
+    //         firstName, 
+    //         lastName, 
+    //         userAge, 
+    //         Gender, 
+    //         userRole, 
+    //         emailAdd, 
+    //         userPass, 
+    //         UserProfile 
+    //         FROM Users 
+    //         WHERE emailAdd = '${emailAdd}';`;
         
-            db.query(strQry, async (err, results) => {
-              if (err) throw new Error("To login, please review your query");
-              if (!results?.length) {
-                res.json({
-                  status: 401,
-                  msg: "You provided the wrong email🤨",
-                });
-              } else {
-                const isValidPass = await compare(password, results[0].password);
-                if (isValidPass) {
-                  const token = createToken({
-                    emailAdd,
-                    password,
-                  });
-                  res.json({
-                    status: res.statusCode,
-                    token,
-                    result: results[0],
-                  });
-                } else {
-                  res.json({
-                    status: 401,
-                    msg: "Invalid password or you are not registered",
-                  });
-                }
-              }
-            });
-          } catch (e) {
-            res.json({
-              status: 404,
-              msg: e.message,
-            });
-          }
-    }
+    //         db.query(sqlQry, async (err, results) => {
+    //           if (err) throw new Error("To login, please review your query");
+    //           if (!results?.length) {
+    //             res.json({
+    //               status: 401,
+    //               msg: "You provided the wrong email🤨",
+    //             });
+    //           } else {
+    //             const isValidPass = await compare(userPass, results[0].userPass);
+    //             if (isValidPass) {
+    //               const token = createToken({
+    //                 emailAdd,
+    //                 userPass,
+    //               });
+    //               res.json({
+    //                 status: res.statusCode,
+    //                 token,
+    //                 result: results[0],
+    //               });
+    //             } else {
+    //               res.json({
+    //                 status: 401,
+    //                 msg: "Invalid password or you are not registered",
+    //               });
+    //             }
+    //           }
+    //         });
+    //       } catch (e) {
+    //         res.json({
+    //           status: 404,
+    //           msg: e.message,
+    //         });
+    //       }
+    // }
 }
 
 export {

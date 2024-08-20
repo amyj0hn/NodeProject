@@ -18,9 +18,9 @@ app.use(
 app.use('/Users', userRouter)
 app.use('/Products', productRouter)
 // Endpoint
-app.get("^/$|/NodeProject", (req, res => {
+app.get("^/$|/NodeProject", (req, res) => {
     res.status(200).sendFile(path.resolve("./static/html/index.html"));
-}))
+})
 
 // Start the server
 app.listen(port, () => {

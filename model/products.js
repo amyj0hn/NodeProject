@@ -2,7 +2,7 @@ import { connection as db } from "../config/index.js";
 import { hash } from "bcrypt";
 
 class Products{
-    FetchProducts(req,res){
+    getProducts(req, res){
             try {
               const strQry = `
                   SELECT 
@@ -29,7 +29,7 @@ class Products{
             }
           };
 
-    RecentProducts(req, res){
+    getRecentProducts(req, res){
       try {
         const strQry = `
             SELECT *
@@ -52,7 +52,7 @@ class Products{
       }
     }
 
-    FetchProduct(req,res){
+    getAProduct(req,res){
         try {
             const strQry = `
         SELECT 
@@ -66,7 +66,7 @@ class Products{
         WHERE prodID = ${req.params.id};
         `
             db.query(strQry, (err, result) => {
-              if (err) throw new Error(err);
+              if (err) throw new Error("Issue occurred while retrieving the desired product.");
               res.json({
                 status: res.statusCode,
                 result: result[0],
@@ -80,7 +80,7 @@ class Products{
           }
 }
 
-    AddProduct(req, res){
+    addAProduct(req, res){
       try{
         let data = req.body
         const strQry = `
@@ -97,13 +97,12 @@ class Products{
       } catch (e) {
         res.json({
           status: 404,
-          err: e.message,
+          err: e.message
         });
       }
     }
 
-
-     UpdateProduct(req,res){
+     updateAProduct(req,res){
         try {
             let data = req.body;
             const strQry = `
@@ -119,12 +118,12 @@ class Products{
           } catch (e) {
             res.json({
               status: 404,
-              err: e.message,
+              err: e.message
             });
           }
     }
 
-    DeleteProduct(req,res){
+    deleteAProduct(req,res){
         try {
             const strQry = `
                 DELETE FROM Products WHERE prodID = '${req.params.id}';`;

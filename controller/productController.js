@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { products } from "../model/index.js";
-import { verifyAToken } from "../middleware/Authenticate.js";
+// import { verifyAToken } from "../middleware/Authenticate.js";
 
 
 const productRouter =  express.Router()
@@ -9,32 +9,32 @@ productRouter.use(bodyParser.json())
 
 // All products
 productRouter.get('/', (req,res)=>{
-    products.FetchProducts(req,res)
+    products.getProducts(req,res)
 })
 
 // Recent products
 productRouter.get('/recent', (req,res)=>{
-    products.RecentProducts(req,res)
+    products.getRecentProducts(req,res)
 })
 
 // Single product
 productRouter.get('/:id', (req,res)=>{
-    products.FetchProduct(req,res)
+    products.getAProduct(req,res)
 })
 
 // Add/ Create product
 productRouter.post('/add', (req,res)=>{
-    products.AddProduct(req,res)
+    products.addAProduct(req,res)
 })
 
 // Edit/ Update product
 productRouter.patch('/:id', (req,res)=>{
-    products.UpdateProduct(req,res)
+    products.updateAProduct(req,res)
 })
 
 // Delete product
 productRouter.delete('/:id',(req,res)=>{
-    products.DeleteProduct(req,res)
+    products.deleteAProduct(req,res)
 })
 
 export{
