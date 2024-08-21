@@ -187,6 +187,7 @@ export default {
 
 .text-section h1 {
   font-size: 4rem;
+  font-weight: bold;
   margin-left: 5rem;
 }
 
@@ -296,7 +297,8 @@ p {
 /* INFO SECTION */
 .info-section {
   text-align: center;
-  background-color: #f8f1e9;
+  background-color: #D2B48C
+  ;
   padding: 3%;
 }
 

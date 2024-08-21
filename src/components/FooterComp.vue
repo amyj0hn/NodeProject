@@ -10,9 +10,8 @@
               <div class="form-group">
                 <label for="email">Email :</label>
                 <input type="email" id="email" class="form-control" placeholder="Enter your email">
-              </div>
-              <br>
-              <button type="submit" class="btn btn-primary">Join Us!</button>
+            </div>
+                <button type="submit" class="btn btn-primary">Join Us!</button>
             </form>
           </div>
           
@@ -51,7 +50,7 @@
   
   <style scoped>
   .footer-comp {
-    background-color: #fde8d4; /* Use the background color from the image */
+    background-color: #D2B48C; /* Use the background color from the image */
     color: rgb(62, 62, 62);
     padding: 3% 0;
   }

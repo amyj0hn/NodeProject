@@ -1,7 +1,7 @@
 <template>
     <section class="contact-section">
       <div class="contact-header">
-        <h2>Let's Connect</h2>
+        <h1>Let's Connect</h1>
         <p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
       </div>
   
@@ -82,9 +82,9 @@
     text-align: center;
   }
   
-  .contact-header h2 {
-    font-size: 2rem;
+  .contact-header h1 {
     margin-bottom: 0.5rem;
+    font-weight: bold;
   }
   
   .contact-header p {
@@ -135,7 +135,7 @@
   
   .submit-button {
     padding: 0.5rem 1rem;
-    background-color: #6b705c;
+    background-color: #D2B48C;
     color: #fff;
     border: none;
     cursor: pointer;

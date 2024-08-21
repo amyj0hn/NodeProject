@@ -2,7 +2,7 @@
   <div class="about-us">
     <!-- Section 1: This Is Us -->
     <div class="section">
-      <h2>This Is Us</h2>
+      <h1>This Is Us</h1>
       <p>
         We're big believers in the joy of handmade crafts and the magic of a well-crafted plushie.
         Step into our world of unique, handmade crochet dolls, crafted with love and care.
@@ -56,7 +56,6 @@ export default {
 .about-us {
   margin-top: 60px;
   text-align: center;
-  padding: 2rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -64,23 +63,24 @@ export default {
   padding: 2rem 0;
 }
 
-.section h2 {
-  font-size: 3rem;
+.section h1 {
+  font-weight: bold;
   color: #3f3f3f;
 }
 
 .section p {
   font-size: 1.2rem;
   color: #6f6f6f;
-  max-width: 600px;
+  max-width: 40%;
   margin: 1rem auto;
 }
 
 .image-text-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem 0;
+
+  /* justify-content: space-between; */
+  /* padding: 2rem 0; */
 }
 
 .reverse {
@@ -89,15 +89,15 @@ export default {
 
 .image-container img {
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  min-width: 50vw;
+  height: 60vh;
   object-fit: cover;
 }
 
 .text-container {
-  max-width: 500px;
   padding: 1rem;
   text-align: left;
+  height: 60vh;
 }
 
 .text-container h3 {
@@ -113,19 +113,17 @@ export default {
 }
 
 .text-container button {
-  background-color: #ff9999;
+  background-color: #D2B48C;
   color: white;
   border: none;
   padding: 0.8rem 2rem;
   cursor: pointer;
   font-size: 1rem;
-  border-radius: 4px;
 }
 
 .text-banner {
-  background-color: #f0f0f0;
+  background-color: #f9e4cf;
   padding: 3rem 1rem;
-  margin: 2rem 0;
 }
 
 .text-banner h2 {
