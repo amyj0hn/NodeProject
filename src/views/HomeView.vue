@@ -3,8 +3,15 @@
     <div class="text-section">
       <h1>Welcome to Amigurumi!</h1>
       <p class="slogan">Where Every Loop Is a Little Piece of Joy!</p>
+      <div class="button-group">
+        <router-link to="/shop" class="button-link">
+          <button>Shop Now</button>
+        </router-link>
+        <router-link to="/about" class="button-link">
+          <button>Learn More</button>
+        </router-link>
+      </div>
     </div>
-    <br />
     <div class="image-section">
       <div class="container">
         <div class="row">
@@ -36,16 +43,17 @@
         <div class="row">
           <div class="col-md-6">
             <div class="text">
-              <h3>Discover the Art of Amigurumi</h3>
+              <h3>The Timeless Appeal of Handcrafted Treasures</h3>
               <p>
-                Step into a world where creativity meets craftsmanship with our
-                unique collection of crochet animals, lovingly handmade to bring
-                smiles to all ages. Each piece is crafted with meticulous
-                attention to detail, turning simple yarn into delightful
-                characters that capture the essence of charm and playfulness.
-                Whether you're a seasoned collector or looking for a special
-                gift, our Amigurumi creations offer a whimsical touch to any
-                home.
+                In a fast-paced world dominated by mass production, our
+                Amigurumi pieces stand as a testament to the enduring value of
+                handmade artistry. Each crochet creation tells a story of
+                patience, skill, and love, transforming ordinary materials into
+                extraordinary keepsakes. Whether it's a cuddly companion for a
+                child or a charming decoration for your home, these handcrafted
+                treasures are more than just items—they're heirlooms in the
+                making, cherished for their individuality and the care infused
+                into every stitch.
               </p>
             </div>
           </div>
@@ -68,16 +76,18 @@
           </div>
           <div class="col-md-6">
             <div class="text">
-              <h3>Discover the Art of Amigurumi</h3>
+              <h3>A Tradition of Quality and Creativity</h3>
               <p>
-                Step into a world where creativity meets craftsmanship with our
-                unique collection of crochet animals, lovingly handmade to bring
-                smiles to all ages. Each piece is crafted with meticulous
-                attention to detail, turning simple yarn into delightful
-                characters that capture the essence of charm and playfulness.
-                Whether you're a seasoned collector or looking for a special
-                gift, our Amigurumi creations offer a whimsical touch to any
-                home.
+                Our Amigurumi collection is built on a tradition of quality and
+                creativity. We believe in the power of handmade goods to tell a
+                story, and our crochet animals are no exception. Each character
+                is thoughtfully designed and meticulously crafted, resulting in
+                a collection that is as diverse as it is delightful. Our
+                commitment to using high-quality materials ensures that every
+                piece is durable, safe, and made to last. Explore our range of
+                Amigurumi creations and discover the perfect companion for any
+                occasion—one that embodies the charm and whimsy that only a
+                handmade piece can offer.
               </p>
             </div>
           </div>
@@ -162,25 +172,62 @@ export default {
 }
 
 .text-section {
-  background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-anete-lusina-4792081.jpg?raw=true");
+  background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/home.jpg?raw=true");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 5%;
   color: #ffffff;
   min-height: 100vh;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
+  background-blend-mode: darken; /* Optional: Blend the overlay with the image */
 }
 
-h1 {
-  font-size: 5rem;
-  margin: 0;
+.text-section h1 {
+  font-size: 4rem;
+  margin-left: 5rem;
 }
 
-.slogan {
-  font-size: 1rem;
-  color: #8a5050;
+.text-section .slogan {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-left: 5rem;
+}
+
+.text-section button {
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 5rem;
+}
+
+.text-section button:hover {
+  background-color: #e3e3e3;
+}
+
+.text-section .button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.text-section .button-group button {
+  padding: 1%;
+  width: 10rem;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.text-section .button-group button:hover {
+  background-color: #e3e3e3;
 }
 
 /* IMAGES SECTION */
@@ -243,7 +290,7 @@ p {
   color: #474747;
 }
 
-.text{
+.text {
   width: 60%;
 }
 /* INFO SECTION */
