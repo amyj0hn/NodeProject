@@ -32,11 +32,11 @@
             <!-- <h5>Instagram</h5>
             <h5>Facebook</h5>
             <h5>Twitter</h5> -->
-            <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(1).png?raw=true" alt="facebook">
+            <a href="https://www.facebook.com/"><img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(1).png?raw=true" alt="facebook"></a>
             <br>
-            <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(2).png?raw=true" alt="instagram">
+            <a href="https://www.instagram.com/"><img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(2).png?raw=true" alt="instagram"></a>
             <br>
-            <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(3).png?raw=true" alt="x">
+            <a href="https://x.com/"><img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(3).png?raw=true" alt="x"></a>
           </div>
         </div>
       </div>

@@ -54,6 +54,7 @@ export default {
 
 <style scoped>
 .about-us {
+  margin-top: 60px;
   text-align: center;
   padding: 2rem;
   font-family: 'Times New Roman', Times, serif;

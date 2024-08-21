@@ -53,9 +53,9 @@
             <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(4).png?raw=true" alt="Thumbs Up Icon" />
             <h5>Follow</h5>
             <div class="social-links">
-              <a href="#"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/1.webp" alt="Facebook Icon" /></a>
-              <a href="#"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/12.webp" alt="Twitter Icon" /></a>
-              <a href="#"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/3.webp" alt="Instagram Icon" /></a>
+              <a href="https://www.facebook.com/"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/1.webp" alt="Facebook Icon" /></a>
+              <a href="https://x.com/"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/12.webp" alt="Twitter Icon" /></a>
+              <a href="https://www.instagram.com/"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/3.webp" alt="Instagram Icon" /></a>
             </div>
           </div>
         </div>
@@ -76,6 +76,7 @@
   
   <style scoped>
   .contact-section {
+    margin-top: 60px;
     padding: 2rem;
     background-color: #fef5ec;
     text-align: center;
