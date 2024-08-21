@@ -30,9 +30,9 @@ userRouter.delete('/:id', (req,res)=>{
 })
 
 // User Login
-// userRouter.post('/login', (req,res)=>{
-//     users.Login(req,res)
-// })
+userRouter.post('/login', (req,res)=>{
+    users.Login(req,res)
+})
 
 export{
     express,

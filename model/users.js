@@ -34,34 +34,35 @@ class Users{
     }
 
     FetchUser(req,res){
-        try {
-            const sqlQry = `
-            SELECT 
-            userID, 
-            firstName, 
-            lastName, 
-            userAge, 
-            Gender, 
-            userRole, 
-            emailAdd, 
-            userPass, 
-            UserProfile
-            WHERE userID = '${req.params.id}';
-                `;
-            db.query(sqlQry, (err, result) => {
-              if (err) throw new Error(err);
-              res.json({
-                status: res.statusCode,
-                result: result[0],
-              });
-            });
-          } catch (e) {
+      try {
+          const sqlQry = `
+          SELECT 
+          userID, 
+          firstName, 
+          lastName, 
+          userAge, 
+          Gender, 
+          userRole, 
+          emailAdd, 
+          userPass, 
+          UserProfile
+          FROM Users 
+          WHERE userID = '${req.params.id}';
+              `;
+          db.query(sqlQry, (err, result) => {
+            if (err) throw new Error('Issue when retrieving a user');
             res.json({
-              status: 404,
-              msg: e.message,
+              status: res.statusCode,
+              result: result[0],
             });
-          }
-}
+          });
+        } catch (e) {
+          res.json({
+            status: 404,
+            msg: e.message,
+          });
+        }
+  }  
 
     async RegisterUser(req,res){
         try {
@@ -140,57 +141,57 @@ class Users{
           }
     }
 
-    // async Login(req,res){
-    //     try {
-    //         const { emailAdd, userPass } = req.body;
-    //         const sqlQry = `
-    //         SELECT 
-    //         userID, 
-    //         firstName, 
-    //         lastName, 
-    //         userAge, 
-    //         Gender, 
-    //         userRole, 
-    //         emailAdd, 
-    //         userPass, 
-    //         UserProfile 
-    //         FROM Users 
-    //         WHERE emailAdd = '${emailAdd}';`;
+    async Login(req,res){
+        try {
+            const { emailAdd, userPass } = req.body;
+            const sqlQry = `
+            SELECT 
+            userID, 
+            firstName, 
+            lastName, 
+            userAge, 
+            Gender, 
+            userRole, 
+            emailAdd, 
+            userPass, 
+            UserProfile 
+            FROM Users 
+            WHERE emailAdd = '${emailAdd}';`;
         
-    //         db.query(sqlQry, async (err, results) => {
-    //           if (err) throw new Error("To login, please review your query");
-    //           if (!results?.length) {
-    //             res.json({
-    //               status: 401,
-    //               msg: "You provided the wrong email🤨",
-    //             });
-    //           } else {
-    //             const isValidPass = await compare(userPass, results[0].userPass);
-    //             if (isValidPass) {
-    //               const token = createToken({
-    //                 emailAdd,
-    //                 userPass,
-    //               });
-    //               res.json({
-    //                 status: res.statusCode,
-    //                 token,
-    //                 result: results[0],
-    //               });
-    //             } else {
-    //               res.json({
-    //                 status: 401,
-    //                 msg: "Invalid password or you are not registered",
-    //               });
-    //             }
-    //           }
-    //         });
-    //       } catch (e) {
-    //         res.json({
-    //           status: 404,
-    //           msg: e.message,
-    //         });
-    //       }
-    // }
+            db.query(sqlQry, async (err, results) => {
+              if (err) throw new Error("To login, please review your query");
+              if (!results?.length) {
+                res.json({
+                  status: 401,
+                  msg: "You provided the wrong email🤨",
+                });
+              } else {
+                const isValidPass = await compare(userPass, results[0].userPass);
+                if (isValidPass) {
+                  const token = createToken({
+                    emailAdd,
+                    userPass,
+                  });
+                  res.json({
+                    status: res.statusCode,
+                    token,
+                    result: results[0],
+                  });
+                } else {
+                  res.json({
+                    status: 401,
+                    msg: "Invalid password or you are not registered",
+                  });
+                }
+              }
+            });
+          } catch (e) {
+            res.json({
+              status: 404,
+              msg: e.message,
+            });
+          }
+    }
 }
 
 export {

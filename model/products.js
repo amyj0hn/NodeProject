@@ -15,7 +15,7 @@ class Products{
                   FROM Products;
                   `
               db.query(strQry, (err, results) => {
-                if (err) throw new Error("Issue occurred while retrieving all products.");
+                if(err) throw new Error("Issue occurred while retrieving all products.");
                 res.json({
                   status: res.statusCode,
                   results,
@@ -38,7 +38,7 @@ class Products{
             LIMIT 5;
             `
         db.query(strQry, (err, results) => {
-          if (err) throw new Error(err);
+          if(err) throw new Error(err);
           res.json({
             status: res.statusCode,
             results,
@@ -66,7 +66,7 @@ class Products{
         WHERE prodID = ${req.params.id};
         `
             db.query(strQry, (err, result) => {
-              if (err) throw new Error("Issue occurred while retrieving the desired product.");
+              if(err) throw new Error('Issue occurred while retrieving the desired product')
               res.json({
                 status: res.statusCode,
                 result: result[0],
@@ -109,7 +109,7 @@ class Products{
                 UPDATE Products SET ? WHERE prodID = '${req.params.id}';
                 `;
             db.query(strQry, [data], (err) => {
-              if (err) throw new Error("Unable to update product😢");
+              if(err) throw new Error("Unable to update product😢");
               res.json({
                 status: res.statusCode,
                 msg: "The product was updated😁",
@@ -129,8 +129,7 @@ class Products{
                 DELETE FROM Products WHERE prodID = '${req.params.id}';`;
         
             db.query(strQry, (err) => {
-              if (err)
-                throw new Error("To delete a product, please review your delete query");
+              if(err) throw new Error("To delete a product, please review your delete query");
               res.json({
                 status: res.statusCode,
                 msg: "The product has been removed😁",
