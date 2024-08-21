@@ -4,7 +4,7 @@
         <div class="row">
           <!-- Newsletter Section -->
           <div class="col-md-4" id="news">
-            <h2>Newsletter</h2>
+            <h5>Newsletter</h5>
             <p>Want to stay up to date with all the latest & newest products? Subcribe to our channel!</p>
             <form>
               <div class="form-group">
@@ -18,7 +18,7 @@
           
           <!-- Contact Section -->
           <div class="col-md-4" id="contact">
-            <h2>Talk to Us</h2>
+            <h5>Talk to Us</h5>
             <p>123-456-7890</p>
             <p>info@mysite.com</p>
             <address>
@@ -29,9 +29,9 @@
           
           <!-- Social Media Section -->
           <div class="col-md-4 text-right" id="socials">
-            <!-- <h2>Instagram</h2>
-            <h2>Facebook</h2>
-            <h2>Twitter</h2> -->
+            <!-- <h5>Instagram</h5>
+            <h5>Facebook</h5>
+            <h5>Twitter</h5> -->
             <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(1).png?raw=true" alt="facebook">
             <br>
             <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(2).png?raw=true" alt="instagram">
@@ -57,8 +57,9 @@
   }
   
   .container {
-    max-width:100%;
+    max-width:80%;
     margin: 0 auto;
+
   }
   
 
@@ -68,23 +69,32 @@
     align-items: flex-start;
   }
   
-  h2 {
+  h5 {
     font-weight: bold;
   }
   
   #news{
     text-align: start;
     align-content: start;
+    width: 20%;
+    margin-right: 5%;
+    margin-left: 5%;
   }
   
   #contact{
     text-align: start;
     align-content: start;
+    width: 20%;
+    margin-right: 5%;
+    margin-left: 5%;
   }
 
   #socials{
     text-align: start;
     align-content: start;
+    width: 20%;
+    margin-right: 5%;
+    margin-left: 5%;
   }
   .form-control {
     flex: 1;

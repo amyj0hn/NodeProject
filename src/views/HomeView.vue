@@ -15,16 +15,19 @@
             />
           </div>
           <div class="col-md-6">
-            <h3>Discover the Art of Amigurumi</h3>
-            <p>
-              Step into a world where creativity meets craftsmanship with our
-              unique collection of crochet animals, lovingly handmade to bring
-              smiles to all ages. Each piece is crafted with meticulous
-              attention to detail, turning simple yarn into delightful
-              characters that capture the essence of charm and playfulness.
-              Whether you're a seasoned collector or looking for a special gift,
-              our Amigurumi creations offer a whimsical touch to any home.
-            </p>
+            <div class="text">
+              <h3>Discover the Art of Amigurumi</h3>
+              <p>
+                Step into a world where creativity meets craftsmanship with our
+                unique collection of crochet animals, lovingly handmade to bring
+                smiles to all ages. Each piece is crafted with meticulous
+                attention to detail, turning simple yarn into delightful
+                characters that capture the essence of charm and playfulness.
+                Whether you're a seasoned collector or looking for a special
+                gift, our Amigurumi creations offer a whimsical touch to any
+                home.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -32,16 +35,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h3>Discover the Art of Amigurumi</h3>
-            <p>
-              Step into a world where creativity meets craftsmanship with our
-              unique collection of crochet animals, lovingly handmade to bring
-              smiles to all ages. Each piece is crafted with meticulous
-              attention to detail, turning simple yarn into delightful
-              characters that capture the essence of charm and playfulness.
-              Whether you're a seasoned collector or looking for a special gift,
-              our Amigurumi creations offer a whimsical touch to any home.
-            </p>
+            <div class="text">
+              <h3>Discover the Art of Amigurumi</h3>
+              <p>
+                Step into a world where creativity meets craftsmanship with our
+                unique collection of crochet animals, lovingly handmade to bring
+                smiles to all ages. Each piece is crafted with meticulous
+                attention to detail, turning simple yarn into delightful
+                characters that capture the essence of charm and playfulness.
+                Whether you're a seasoned collector or looking for a special
+                gift, our Amigurumi creations offer a whimsical touch to any
+                home.
+              </p>
+            </div>
           </div>
           <div class="col-md-6">
             <img
@@ -61,23 +67,26 @@
             />
           </div>
           <div class="col-md-6">
-            <h3>Discover the Art of Amigurumi</h3>
-            <p>
-              Step into a world where creativity meets craftsmanship with our
-              unique collection of crochet animals, lovingly handmade to bring
-              smiles to all ages. Each piece is crafted with meticulous
-              attention to detail, turning simple yarn into delightful
-              characters that capture the essence of charm and playfulness.
-              Whether you're a seasoned collector or looking for a special gift,
-              our Amigurumi creations offer a whimsical touch to any home.
-            </p>
+            <div class="text">
+              <h3>Discover the Art of Amigurumi</h3>
+              <p>
+                Step into a world where creativity meets craftsmanship with our
+                unique collection of crochet animals, lovingly handmade to bring
+                smiles to all ages. Each piece is crafted with meticulous
+                attention to detail, turning simple yarn into delightful
+                characters that capture the essence of charm and playfulness.
+                Whether you're a seasoned collector or looking for a special
+                gift, our Amigurumi creations offer a whimsical touch to any
+                home.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="info-section">
       <h2>Find Your Next Cuddly Companion</h2>
-      <br>
+      <br />
       <h4>Visit us at</h4>
       <div class="info-content">
         <div class="info-block">
@@ -92,6 +101,47 @@
             Saturday: 11am - 3pm<br />
             Sunday: Closed
           </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="container-fullwidth">
+        <div class="row no-gutters">
+          <div class="col">
+            <img
+              src="https://github.com/MasoodahGeorge/nodePics/blob/main/botpics%20(3).jpg?raw=true"
+              class="img-full"
+              alt="Image 1"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="https://github.com/MasoodahGeorge/nodePics/blob/main/botpics%20(2).jpg?raw=true"
+              class="img-full"
+              alt="Image 2"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="https://github.com/MasoodahGeorge/nodePics/blob/main/botpics%20(1).jpg?raw=true"
+              class="img-full"
+              alt="Image 3"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="https://github.com/MasoodahGeorge/nodePics/blob/main/botpic(5).jpg?raw=true"
+              class="img-full"
+              alt="Image 4"
+            />
+          </div>
+          <div class="col">
+            <img
+              src="https://github.com/MasoodahGeorge/nodePics/blob/main/botpics%20(4).jpg?raw=true"
+              class="img-full"
+              alt="Image 5"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -130,6 +180,7 @@ h1 {
 
 .slogan {
   font-size: 1rem;
+  color: #8a5050;
 }
 
 /* IMAGES SECTION */
@@ -138,7 +189,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: #f8f1e9; /* Matches the light beige background color */
+  /* background-color: #f8f1e9; */
 }
 
 .container {
@@ -166,7 +217,7 @@ h1 {
 
 .col-md-6 img {
   width: 100%;
-  height: 45rem;
+  height: 70vh;
   object-fit: cover;
 }
 
@@ -176,23 +227,25 @@ h1 {
 
 .col-md-6:last-child {
   padding-left: 0;
-  text-align: center; /* Center the text */
+  text-align: center;
 }
 
 h3 {
   font-size: 2rem;
   font-weight: bold;
-  color: #363636; /* Matches the .info-section heading color */
+  color: #363636;
 }
 
 p {
   font-size: 1.2rem;
   line-height: 1.6;
-  margin: 0;
-  color: #474747; /* Matches the .info-section text color */
+  margin: 3%;
+  color: #474747;
 }
 
-
+.text{
+  width: 60%;
+}
 /* INFO SECTION */
 .info-section {
   text-align: center;
@@ -200,7 +253,8 @@ p {
   padding: 3%;
 }
 
-.info-section h2, h4 {
+.info-section h2,
+h4 {
   font-weight: bold;
   color: #363636;
 }
@@ -214,26 +268,46 @@ p {
 
 .info-block {
   text-align: left;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .info-block h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #474747; /* Matches the black text color */
+  margin-bottom: 3%;
+  color: #474747;
 }
 
 .info-block p {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
-  color: #474747; /* Matches the black text color */
+  color: #474747;
 }
 
 .divider {
   width: 1px;
-  height: 60px;
-  background-color: #474747; /* Black color for the divider */
+  height: 80px;
+  background-color: #474747;
+}
+
+/* IMAGE COLLAGE */
+.container-fullwidth {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.col {
+  padding: 0;
+}
+
+.img-full {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
 }
 </style>
