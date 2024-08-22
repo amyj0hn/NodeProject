@@ -43,7 +43,7 @@ import { useStore } from 'vuex'
 
 const store = useStore()
 const products = computed(
-    () => store.state.products
+    () => store.state.product
 )
 
 onMounted(()=> {

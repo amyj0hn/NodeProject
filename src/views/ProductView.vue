@@ -31,7 +31,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const store = useStore()
 const product = computed(
-    () => store.state.products
+    () => store.state.product
 )
 
 onMounted(()=>{
