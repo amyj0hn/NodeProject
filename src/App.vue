@@ -18,15 +18,6 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: "Times New Roman", Times, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: #F8E3E7;
-}
-
+<style src="@/assets/css/style.css">
 
 </style>
