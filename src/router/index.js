@@ -4,8 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import ContactView from '../views/ContactView.vue'
 import ProductView from '../views/ProductView.vue'
 import AdminView from '../views/AdminView.vue'
-import ProductsView from '@/views/ProductsView.vue'
-
+import ProductsView from '../views/ProductsView.vue'
 
 const routes = [
   {
@@ -26,14 +25,15 @@ const routes = [
   }
   ,
   {
-    path: '/product/:id',
-    name: 'product',
-    component: ProductView
-  },
-  {
     path: '/products',
     name: 'products',
     component: ProductsView
+  }
+  ,
+  {
+    path: '/product',
+    name: 'product',
+    component: ProductView
   }
   ,
   {
