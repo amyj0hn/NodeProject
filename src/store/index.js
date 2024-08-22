@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import router from "@/router";
-const apiURL = "https://nodeproject-0wx0.onrender.com/";
+const apiURL = "https://nodeproject-0wx0.onrender.com/"
 
 export default createStore({
   state: {
@@ -158,7 +158,6 @@ export default createStore({
         });
       }
     },
-  
     async recentProducts(context) {
       try {
         const { results, msg } = await (
