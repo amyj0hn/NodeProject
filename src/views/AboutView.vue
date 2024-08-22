@@ -1,8 +1,12 @@
 <template>
   <div class="about-us">
+    <div v-if="isLoading" class="spinner-container">
+      <Spinner :isLoading="isLoading"></Spinner>
+    </div>
+    <div v-else>
     <!-- Section 1: This Is Us -->
-    <div class="section">
-      <h2>This Is Us</h2>
+    <div class="section fade-in">
+      <h1>This Is Us</h1>
       <p>
         We're big believers in the joy of handmade crafts and the magic of a well-crafted plushie.
         Step into our world of unique, handmade crochet dolls, crafted with love and care.
@@ -10,7 +14,7 @@
     </div>
 
     <!-- Section 2: Image & Text -->
-    <div class="image-text-section">
+    <div class="image-text-section fade-in">
       <div class="image-container">
         <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-2375361-10768164.jpg?raw=true" alt="Crochet Plushies">
       </div>
@@ -20,35 +24,55 @@
           Our crochet dolls are more than just toys—they're handcrafted wonders that bring a touch of
           joy and whimsy to every home. Each doll is carefully designed to be a lasting companion.
         </p>
-        <button>Explore Our Collection</button>
+        <router-link to="/products">
+          <button>Explore Our Collection</button>
+        </router-link>
       </div>
     </div>
 
     <!-- Section 3: Real Craftsmanship -->
-    <div class="text-banner">
-      <h2>Real Craftsmanship. Handmade with Love.</h2>
+    <div class="text-banner fade-in">
+      <h3>Real Craftsmanship. Handmade with Love.</h3>
     </div>
 
     <!-- Section 4: Image & Text -->
-    <div class="image-text-section reverse">
+    <div class="image-text-section reverse fade-in">
       <div class="text-container">
         <h3>From Our Hearts to Your Home</h3>
         <p>
           Every stitch is a labor of love, and every doll is crafted with the utmost care. Our passion
           for crochet shines through in every detail, ensuring that your plushie is truly special.
         </p>
-        <button>Visit Us</button>
+        <router-link to="/contact">
+          <button>Contact Us</button>
+        </router-link>
       </div>
       <div class="image-container">
         <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-castorlystock-3945634.jpg?raw=true" alt="Crochet Crafting">
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import Spinner from '../components/SpinnerComp.vue';
 export default {
   name: "AboutView",
+  components: {
+    Spinner
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  mounted() {
+    // Simulate data loading with a timeout
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000); // Adjust the timeout duration as needed
+  }
 };
 </script>
 
@@ -56,7 +80,6 @@ export default {
 .about-us {
   margin-top: 60px;
   text-align: center;
-  padding: 2rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -64,23 +87,21 @@ export default {
   padding: 2rem 0;
 }
 
-.section h2 {
-  font-size: 3rem;
+.section h1 {
+  font-weight: bold;
   color: #3f3f3f;
 }
 
 .section p {
   font-size: 1.2rem;
   color: #6f6f6f;
-  max-width: 600px;
+  max-width: 40%;
   margin: 1rem auto;
 }
 
 .image-text-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem 0;
 }
 
 .reverse {
@@ -89,15 +110,15 @@ export default {
 
 .image-container img {
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  min-width: 50vw;
+  height: 60vh;
   object-fit: cover;
 }
 
 .text-container {
-  max-width: 500px;
   padding: 1rem;
   text-align: left;
+  height: 60vh;
 }
 
 .text-container h3 {
@@ -113,23 +134,34 @@ export default {
 }
 
 .text-container button {
-  background-color: #ff9999;
+  background-color: #D2B48C;
   color: white;
   border: none;
   padding: 0.8rem 2rem;
   cursor: pointer;
   font-size: 1rem;
-  border-radius: 4px;
 }
 
 .text-banner {
-  background-color: #f0f0f0;
+  background-color: #f9e4cf;
   padding: 3rem 1rem;
-  margin: 2rem 0;
 }
 
-.text-banner h2 {
-  font-size: 2.5rem;
+.text-banner h3 {
   color: #3f3f3f;
+}
+
+/* Animation styles */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

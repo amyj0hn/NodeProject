@@ -1,90 +1,61 @@
 <template>
+
   <div class="home-sec">
-    <div class="text-section">
+    <div v-if="isLoading" class="spinner-container">
+      <Spinner :isLoading="isLoading"></Spinner>
+    </div>
+    <div v-else>
+    <!-- Text Section -->
+    <div class="text-section fade-in">
       <h1>Welcome to Amigurumi!</h1>
       <p class="slogan">Where Every Loop Is a Little Piece of Joy!</p>
+      <div class="button-group">
+        <router-link to="/products" class="button-link">
+          <button>Shop Now</button>
+        </router-link>
+        <router-link to="/about" class="button-link">
+          <button>Learn More</button>
+        </router-link>
+      </div>
     </div>
-    <br />
-    <div class="image-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-anete-lusina-4792086.jpg?raw=true"
-              alt="Amigurumi Art"
-            />
-          </div>
-          <div class="col-md-6">
-            <div class="text">
-              <h3>Discover the Art of Amigurumi</h3>
-              <p>
-                Step into a world where creativity meets craftsmanship with our
-                unique collection of crochet animals, lovingly handmade to bring
-                smiles to all ages. Each piece is crafted with meticulous
-                attention to detail, turning simple yarn into delightful
-                characters that capture the essence of charm and playfulness.
-                Whether you're a seasoned collector or looking for a special
-                gift, our Amigurumi creations offer a whimsical touch to any
-                home.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat for additional rows -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="text">
-              <h3>Discover the Art of Amigurumi</h3>
-              <p>
-                Step into a world where creativity meets craftsmanship with our
-                unique collection of crochet animals, lovingly handmade to bring
-                smiles to all ages. Each piece is crafted with meticulous
-                attention to detail, turning simple yarn into delightful
-                characters that capture the essence of charm and playfulness.
-                Whether you're a seasoned collector or looking for a special
-                gift, our Amigurumi creations offer a whimsical touch to any
-                home.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-2375361-16228902.jpg?raw=true"
-              alt="Amigurumi Art"
-            />
-          </div>
-        </div>
-      </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-bogdan-groshev-722715367-20347259.jpg?raw=true"
-              alt="Amigurumi Art"
-            />
-          </div>
-          <div class="col-md-6">
-            <div class="text">
-              <h3>Discover the Art of Amigurumi</h3>
-              <p>
-                Step into a world where creativity meets craftsmanship with our
-                unique collection of crochet animals, lovingly handmade to bring
-                smiles to all ages. Each piece is crafted with meticulous
-                attention to detail, turning simple yarn into delightful
-                characters that capture the essence of charm and playfulness.
-                Whether you're a seasoned collector or looking for a special
-                gift, our Amigurumi creations offer a whimsical touch to any
-                home.
-              </p>
-            </div>
-          </div>
-        </div>
+    <!-- Service Section -->
+    <div class="service-section fade-in">
+      <div class="service-item">
+        <img
+          src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(1).png?raw=true"
+          alt="Worldwide Delivery"
+        />
+        <p>Worldwide Delivery</p>
+      </div>
+      <div class="service-item">
+        <img
+          src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(2).png?raw=true"
+          alt="100% Cash Back"
+        />
+        <p>100% Cash Back</p>
+      </div>
+      <div class="service-item">
+        <img
+          src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(3).png?raw=true"
+          alt="Secure Payment"
+        />
+        <p>Secure Payment</p>
       </div>
     </div>
-    <div class="info-section">
+
+    <!-- Background Image with Overlaying Text -->
+    <div class="background-section fade-in">
+      <div class="overlay-text">
+        <h2>The Timeless Appeal of Handcrafted Treasures</h2>
+        <p>
+          In a fast-paced world dominated by mass production, our Amigurumi pieces stand as a testament to the enduring value of handmade artistry. Each crochet creation tells a story of patience, skill, and love, transforming ordinary materials into extraordinary keepsakes. Whether it's a cuddly companion for a child or a charming decoration for your home, these handcrafted treasures are more than just items—they're heirlooms in the making, cherished for their individuality and the care infused into every stitch.
+        </p>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section fade-in">
       <h2>Find Your Next Cuddly Companion</h2>
       <br />
       <h4>Visit us at</h4>
@@ -104,7 +75,9 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+
+    <!-- Image Collage -->
+    <div class="container-fluid fade-in">
       <div class="container-fullwidth">
         <div class="row no-gutters">
           <div class="col">
@@ -146,12 +119,30 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
+import Spinner from '../components/SpinnerComp.vue';
+
 export default {
   name: "HomeView",
+  components:{
+    Spinner
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  mounted() {
+    // Simulate data loading with a timeout
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000); // Adjust the timeout duration as needed
+  }
 };
+
 </script>
 
 <style scoped>
@@ -162,94 +153,123 @@ export default {
 }
 
 .text-section {
-  background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-anete-lusina-4792081.jpg?raw=true");
+  background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/home.jpg?raw=true");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 5%;
   color: #ffffff;
   min-height: 100vh;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
+  background-blend-mode: darken; /* Optional: Blend the overlay with the image */
 }
 
-h1 {
-  font-size: 5rem;
-  margin: 0;
+.text-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-left: 5rem;
 }
 
-.slogan {
-  font-size: 1rem;
-  color: #8a5050;
+.text-section .slogan {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-left: 5rem;
 }
 
-/* IMAGES SECTION */
-.image-section {
+.text-section button {
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 5rem;
+}
+
+.text-section button:hover {
+  background-color: #e3e3e3;
+}
+
+.text-section .button-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  /* background-color: #f8f1e9; */
+  gap: 1rem;
 }
 
-.container {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
+.text-section .button-group button {
+  padding: 1%;
+  width: 10rem;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.row {
+.text-section .button-group button:hover {
+  background-color: #e3e3e3;
+}
+
+/* SERVICE SECTION */
+.service-section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  text-align: center;
+  background-color: #ac866d; /* Brighter pink section */
+  padding: 3% 0;
 }
 
-.col-md-6 {
-  padding: 0;
+.service-item {
+  margin: 0 5rem;
+}
+
+.service-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.service-item p {
+  color: #ffffff;
+}
+
+/* BACKGROUND IMAGE SECTION */
+.background-section {
+  background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/abc.jpg?raw=true");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 5%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
+  background-blend-mode: darken; /* Optional: Blend the overlay with the image */
 }
 
-.col-md-6 img {
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
+.overlay-text {
+  max-width: 40%;
+  text-align: right;
 }
 
-.col-md-6:first-child {
-  padding-right: 0;
-}
-
-.col-md-6:last-child {
-  padding-left: 0;
-  text-align: center;
-}
-
-h3 {
+.overlay-text h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #363636;
 }
 
-p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 3%;
-  color: #474747;
+.overlay-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
 }
 
-.text{
-  width: 60%;
-}
 /* INFO SECTION */
 .info-section {
   text-align: center;
-  background-color: #f8f1e9;
+  background-color: #d2b48c;
   padding: 3%;
 }
 
@@ -286,7 +306,7 @@ h4 {
 
 .divider {
   width: 1px;
-  height: 80px;
+  height: 8rem;
   background-color: #474747;
 }
 
@@ -309,5 +329,19 @@ h4 {
   width: 100%;
   height: 50vh;
   object-fit: cover;
+}
+
+/* Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

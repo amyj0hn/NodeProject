@@ -10,9 +10,8 @@
               <div class="form-group">
                 <label for="email">Email :</label>
                 <input type="email" id="email" class="form-control" placeholder="Enter your email">
-              </div>
-              <br>
-              <button type="submit" class="btn btn-primary">Join Us!</button>
+            </div>
+                <button type="submit" class="btn btn-primary">Join Us!</button>
             </form>
           </div>
           
@@ -32,11 +31,11 @@
             <!-- <h5>Instagram</h5>
             <h5>Facebook</h5>
             <h5>Twitter</h5> -->
-            <a href="https://www.facebook.com/"><img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(1).png?raw=true" alt="facebook"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/1.webp" alt="facebook"></a>
             <br>
-            <a href="https://www.instagram.com/"><img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(2).png?raw=true" alt="instagram"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/3.webp" alt="instagram"></a>
             <br>
-            <a href="https://x.com/"><img src="https://github.com/MasoodahGeorge/nodePics/blob/main/icon%20(3).png?raw=true" alt="x"></a>
+            <a href="https://x.com/" target="_blank"><img src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/12.webp" alt="x"></a>
           </div>
         </div>
       </div>
@@ -51,7 +50,7 @@
   
   <style scoped>
   .footer-comp {
-    background-color: pink; /* Use the background color from the image */
+    background-color: #D2B48C; /* Use the background color from the image */
     color: rgb(62, 62, 62);
     padding: 3% 0;
   }
@@ -98,8 +97,6 @@
   }
   .form-control {
     flex: 1;
-    margin-right: 10px;
-    padding: 10px;
     border: 1px solid #ccc;
     color: rgb(69, 69, 69);
   }

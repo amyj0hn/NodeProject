@@ -42,9 +42,10 @@ export default {
 }
 
 .bg-custom {
-  background-color: #F8E3E7 !important;
+  background-color: #fef5ec !important;
   padding: 1%;
   margin: 0;
+  border: 5px black;
 }
 
 .navbar-nav .nav-link {
