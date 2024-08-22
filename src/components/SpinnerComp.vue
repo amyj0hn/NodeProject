@@ -33,8 +33,8 @@ export default {
 }
 
 .spinner {
-  width: 60px;
-  height: 60px;
+  width: 3rem;
+  height: 3rem;
   position: relative;
 }
 

@@ -227,12 +227,10 @@ export default {
 .service-item img {
   width: 50px;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .service-item p {
-  font-family: "Arial", sans-serif;
-  font-size: 14px;
   color: #ffffff;
 }
 
@@ -308,7 +306,7 @@ h4 {
 
 .divider {
   width: 1px;
-  height: 80px;
+  height: 8rem;
   background-color: #474747;
 }
 
