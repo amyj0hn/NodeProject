@@ -7,7 +7,7 @@
     <div v-else>
     <!-- Text Section -->
     <div class="text-section fade-in">
-      <h1>Welcome to Amigurumi!</h1>
+      <h1 class="display-4">Welcome to Amigurumi!</h1>
       <p class="slogan">Where Every Loop Is a Little Piece of Joy!</p>
       <div class="button-group">
         <router-link to="/products" class="button-link">
@@ -21,21 +21,21 @@
 
     <!-- Service Section -->
     <div class="service-section fade-in">
-      <div class="service-item">
+      <div class="col-md-4 service-item">
         <img
           src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(1).png?raw=true"
           alt="Worldwide Delivery"
         />
         <p>Worldwide Delivery</p>
       </div>
-      <div class="service-item">
+      <div class="col-md-4 service-item">
         <img
           src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(2).png?raw=true"
           alt="100% Cash Back"
         />
         <p>100% Cash Back</p>
       </div>
-      <div class="service-item">
+      <div class="col-md-4 service-item">
         <img
           src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(3).png?raw=true"
           alt="Secure Payment"
@@ -47,7 +47,7 @@
     <!-- Background Image with Overlaying Text -->
     <div class="background-section fade-in">
       <div class="overlay-text">
-        <h2>The Timeless Appeal of Handcrafted Treasures</h2>
+        <h2 class="display-4">The Timeless Appeal of Handcrafted Treasures</h2>
         <p>
           In a fast-paced world dominated by mass production, our Amigurumi pieces stand as a testament to the enduring value of handmade artistry. Each crochet creation tells a story of patience, skill, and love, transforming ordinary materials into extraordinary keepsakes. Whether it's a cuddly companion for a child or a charming decoration for your home, these handcrafted treasures are more than just items—they're heirlooms in the making, cherished for their individuality and the care infused into every stitch.
         </p>
@@ -56,16 +56,16 @@
 
     <!-- Info Section -->
     <div class="info-section fade-in">
-      <h2>Find Your Next Cuddly Companion</h2>
+      <h2 class="display-4">Find Your Next Cuddly Companion</h2>
       <br />
       <h4>Visit us at</h4>
-      <div class="info-content">
-        <div class="info-block">
+      <div class="row justify-content-center info-content">
+        <div class="col-md-4 info-block">
           <h3>Our Studio</h3>
           <p>123 Yarn Loop Lane<br />Knittington, CA 94000</p>
         </div>
-        <div class="divider"></div>
-        <div class="info-block">
+        <div class="col-md-4 divider"></div>
+        <div class="col-md-4 info-block">
           <h3>Studio Hours</h3>
           <p>
             Mon - Fri: 10am - 5pm<br />
@@ -220,10 +220,6 @@ export default {
   padding: 3% 0;
 }
 
-.service-item {
-  margin: 0 5rem;
-}
-
 .service-item img {
   width: 50px;
   height: 50px;
@@ -344,4 +340,5 @@ h4 {
     transform: translateY(0);
   }
 }
+
 </style>
