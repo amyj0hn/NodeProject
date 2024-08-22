@@ -20,13 +20,15 @@
           Our crochet dolls are more than just toys—they're handcrafted wonders that bring a touch of
           joy and whimsy to every home. Each doll is carefully designed to be a lasting companion.
         </p>
+        <router-link to="/products">
         <button>Explore Our Collection</button>
+        </router-link>
       </div>
     </div>
 
     <!-- Section 3: Real Craftsmanship -->
     <div class="text-banner">
-      <h2>Real Craftsmanship. Handmade with Love.</h2>
+      <h3>Real Craftsmanship. Handmade with Love.</h3>
     </div>
 
     <!-- Section 4: Image & Text -->
@@ -37,7 +39,9 @@
           Every stitch is a labor of love, and every doll is crafted with the utmost care. Our passion
           for crochet shines through in every detail, ensuring that your plushie is truly special.
         </p>
-        <button>Visit Us</button>
+        <router-link to="/contact">
+        <button>Contact Us</button>
+        </router-link>
       </div>
       <div class="image-container">
         <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-castorlystock-3945634.jpg?raw=true" alt="Crochet Crafting">
@@ -126,8 +130,7 @@ export default {
   padding: 3rem 1rem;
 }
 
-.text-banner h2 {
-  font-size: 2.5rem;
+.text-banner h3 {
   color: #3f3f3f;
 }
 </style>

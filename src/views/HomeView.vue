@@ -4,7 +4,7 @@
       <h1>Welcome to Amigurumi!</h1>
       <p class="slogan">Where Every Loop Is a Little Piece of Joy!</p>
       <div class="button-group">
-        <router-link to="/shop" class="button-link">
+        <router-link to="/products" class="button-link">
           <button>Shop Now</button>
         </router-link>
         <router-link to="/about" class="button-link">
@@ -12,88 +12,43 @@
         </router-link>
       </div>
     </div>
-    <div class="image-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-anete-lusina-4792086.jpg?raw=true"
-              alt="Amigurumi Art"
-            />
-          </div>
-          <div class="col-md-6">
-            <div class="text">
-              <h3>Discover the Art of Amigurumi</h3>
-              <p>
-                Step into a world where creativity meets craftsmanship with our
-                unique collection of crochet animals, lovingly handmade to bring
-                smiles to all ages. Each piece is crafted with meticulous
-                attention to detail, turning simple yarn into delightful
-                characters that capture the essence of charm and playfulness.
-                Whether you're a seasoned collector or looking for a special
-                gift, our Amigurumi creations offer a whimsical touch to any
-                home.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat for additional rows -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="text">
-              <h3>The Timeless Appeal of Handcrafted Treasures</h3>
-              <p>
-                In a fast-paced world dominated by mass production, our
-                Amigurumi pieces stand as a testament to the enduring value of
-                handmade artistry. Each crochet creation tells a story of
-                patience, skill, and love, transforming ordinary materials into
-                extraordinary keepsakes. Whether it's a cuddly companion for a
-                child or a charming decoration for your home, these handcrafted
-                treasures are more than just items—they're heirlooms in the
-                making, cherished for their individuality and the care infused
-                into every stitch.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-2375361-16228902.jpg?raw=true"
-              alt="Amigurumi Art"
-            />
-          </div>
-        </div>
-      </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-bogdan-groshev-722715367-20347259.jpg?raw=true"
-              alt="Amigurumi Art"
-            />
-          </div>
-          <div class="col-md-6">
-            <div class="text">
-              <h3>A Tradition of Quality and Creativity</h3>
-              <p>
-                Our Amigurumi collection is built on a tradition of quality and
-                creativity. We believe in the power of handmade goods to tell a
-                story, and our crochet animals are no exception. Each character
-                is thoughtfully designed and meticulously crafted, resulting in
-                a collection that is as diverse as it is delightful. Our
-                commitment to using high-quality materials ensures that every
-                piece is durable, safe, and made to last. Explore our range of
-                Amigurumi creations and discover the perfect companion for any
-                occasion—one that embodies the charm and whimsy that only a
-                handmade piece can offer.
-              </p>
-            </div>
-          </div>
-        </div>
+    <!-- Service Section -->
+    <div class="service-section">
+      <div class="service-item">
+        <img
+          src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(1).png?raw=true"
+          alt="Worldwide Delivery"
+        />
+        <p>Worldwide Delivery</p>
+      </div>
+      <div class="service-item">
+        <img
+          src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(2).png?raw=true"
+          alt="100% Cash Back"
+        />
+        <p>100% Cash Back</p>
+      </div>
+      <div class="service-item">
+        <img
+          src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(3).png?raw=true"
+          alt="Secure Payment"
+        />
+        <p>Secure Payment</p>
       </div>
     </div>
+
+    <!-- Background Image with Overlaying Text -->
+    <div class="background-section">
+      <div class="overlay-text">
+        <h2>The Timeless Appeal of Handcrafted Treasures</h2>
+        <p>
+          In a fast-paced world dominated by mass production, our Amigurumi pieces stand as a testament to the enduring value of handmade artistry. Each crochet creation tells a story of patience, skill, and love, transforming ordinary materials into extraordinary keepsakes. Whether it's a cuddly companion for a child or a charming decoration for your home, these handcrafted treasures are more than just items—they're heirlooms in the making, cherished for their individuality and the care infused into every stitch.
+        </p>
+      </div>
+    </div>
+
+    <!-- Info Section -->
     <div class="info-section">
       <h2>Find Your Next Cuddly Companion</h2>
       <br />
@@ -114,6 +69,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Image Collage -->
     <div class="container-fluid">
       <div class="container-fullwidth">
         <div class="row no-gutters">
@@ -231,74 +188,66 @@ export default {
   background-color: #e3e3e3;
 }
 
-/* IMAGES SECTION */
-.image-section {
+/* SERVICE SECTION */
+.service-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  /* background-color: #f8f1e9; */
-}
-
-.container {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-}
-
-.row {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  text-align: center;
+  background-color: #ac866d; /* Brighter pink section */
+  padding: 3% 0;
 }
 
-.col-md-6 {
-  padding: 0;
+.service-item {
+  margin: 0 5rem;
+}
+
+.service-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* BACKGROUND IMAGE SECTION */
+.background-section {
+  background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/abc.jpg?raw=true");
+  background-size:cover;
+  background-position: center;
+  width: 100%;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 5%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
+  background-blend-mode: darken; /* Optional: Blend the overlay with the image */
 }
 
-.col-md-6 img {
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
+.overlay-text {
+  max-width: 40%;
+  text-align: right;
 }
 
-.col-md-6:first-child {
-  padding-right: 0;
-}
-
-.col-md-6:last-child {
-  padding-left: 0;
-  text-align: center;
-}
-
-h3 {
+.overlay-text h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #363636;
 }
 
-p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 3%;
-  color: #474747;
+.overlay-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
 }
 
-.text {
-  width: 60%;
-}
 /* INFO SECTION */
 .info-section {
   text-align: center;
-  background-color: #D2B48C
-  ;
+  background-color: #d2b48c;
   padding: 3%;
 }
 
