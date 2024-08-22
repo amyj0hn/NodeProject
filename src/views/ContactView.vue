@@ -13,80 +13,84 @@
     </div>
 
     <div class="contact-content fade-in">
-      <div class="contact-form slide-up">
-        <form action="https://formspree.io/f/mpzvvdbv" method="POST">
-          <div class="form-group">
-            <div class="input-group">
-              <label for="first-name">First Name:</label>
-              <input type="text" name="first-name" id="first-name" required />
+      <div class="container">
+        <div class="row">
+          <div class="contact-form slide-up">
+            <form action="https://formspree.io/f/mpzvvdbv" method="POST">
+              <div class="form-group">
+                <div class="input-group">
+                  <label for="first-name">First Name:</label>
+                  <input type="text" name="first-name" id="first-name" required />
+                </div>
+                <div class="input-group">
+                  <label for="last-name">Last Name:</label>
+                  <input type="text" name="last-name" id="last-name" required />
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required />
+              </div>
+              <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" rows="4"></textarea>
+              </div>
+              <button type="submit" class="submit-button scale-in">Send</button>
+            </form>
+          </div>
+          <div class="contact-info slide-up">
+            <div class="info-grid">
+              <div class="info-item fade-in">
+                <img
+                  src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(2).png?raw=true"
+                  alt="Map Icon"
+                />
+                <h5>Address</h5>
+                <p>500 Terry Francine St.<br />San Francisco, CA 94158</p>
+              </div>
+              <div class="info-item fade-in">
+                <img
+                  src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(3).png?raw=true"
+                  alt="Phone Icon"
+                />
+                <h5>Phone</h5>
+                <p>123-456-7890</p>
+              </div>
+              <div class="info-item fade-in">
+                <img
+                  src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(1).png?raw=true"
+                  alt="Email Icon"
+                />
+                <h5>Email</h5>
+                <p>info@mysite.com</p>
+              </div>
+              <div class="info-item fade-in">
+                <img
+                  src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(4).png?raw=true"
+                  alt="Thumbs Up Icon"
+                />
+                <h5>Follow</h5>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/" target="_blank"
+                    ><img
+                      src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/1.webp"
+                      alt="Facebook Icon"
+                  /></a>
+                  <a href="https://x.com/" target="_blank"
+                    ><img
+                      src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/12.webp"
+                      alt="Twitter Icon"
+                  /></a>
+                  <a href="https://www.instagram.com/" target="_blank"
+                    ><img
+                      src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/3.webp"
+                      alt="Instagram Icon"
+                  /></a>
+                </div>
+              </div>
             </div>
-            <div class="input-group">
-              <label for="last-name">Last Name:</label>
-              <input type="text" name="last-name" id="last-name" required />
-            </div>
           </div>
-          <div class="input-group">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required />
-          </div>
-          <div class="input-group">
-            <label for="message">Message:</label>
-            <textarea name="message" id="message" rows="4"></textarea>
-          </div>
-          <button type="submit" class="submit-button scale-in">Send</button>
-        </form>
-      </div>
 
-      <div class="contact-info slide-up">
-        <div class="info-grid">
-          <div class="info-item fade-in">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(2).png?raw=true"
-              alt="Map Icon"
-            />
-            <h5>Address</h5>
-            <p>500 Terry Francine St.<br />San Francisco, CA 94158</p>
-          </div>
-          <div class="info-item fade-in">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(3).png?raw=true"
-              alt="Phone Icon"
-            />
-            <h5>Phone</h5>
-            <p>123-456-7890</p>
-          </div>
-          <div class="info-item fade-in">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(1).png?raw=true"
-              alt="Email Icon"
-            />
-            <h5>Email</h5>
-            <p>info@mysite.com</p>
-          </div>
-          <div class="info-item fade-in">
-            <img
-              src="https://github.com/MasoodahGeorge/nodePics/blob/main/icons%20(4).png?raw=true"
-              alt="Thumbs Up Icon"
-            />
-            <h5>Follow</h5>
-            <div class="social-links">
-              <a href="https://www.facebook.com/" target="_blank"
-                ><img
-                  src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/1.webp"
-                  alt="Facebook Icon"
-              /></a>
-              <a href="https://x.com/" target="_blank"
-                ><img
-                  src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/12.webp"
-                  alt="Twitter Icon"
-              /></a>
-              <a href="https://www.instagram.com/" target="_blank"
-                ><img
-                  src="https://raw.githubusercontent.com/MasoodahGeorge/nodePics/main/3.webp"
-                  alt="Instagram Icon"
-              /></a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -118,6 +122,9 @@ export default {
 <style scoped>
 /* CONTACT SECTION */
 .contact-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
   margin-top: 60px;
   padding: 2rem;
   background-color: #fef5ec;
@@ -162,9 +169,11 @@ export default {
 
 .contact-content {
   display: flex;
-  justify-content: space-between;
+  flex: 1;
+  justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  height: 60vh;
 }
 
 .contact-form {
@@ -247,5 +256,22 @@ export default {
 /* Social Links */
 .social-links a {
   margin-right: 0.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .contact-content .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-form, .contact-info {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 </style>
