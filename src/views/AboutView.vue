@@ -1,7 +1,11 @@
 <template>
   <div class="about-us">
+    <div v-if="isLoading" class="spinner-container">
+      <Spinner :isLoading="isLoading"></Spinner>
+    </div>
+    <div v-else>
     <!-- Section 1: This Is Us -->
-    <div class="section">
+    <div class="section fade-in">
       <h1>This Is Us</h1>
       <p>
         We're big believers in the joy of handmade crafts and the magic of a well-crafted plushie.
@@ -10,7 +14,7 @@
     </div>
 
     <!-- Section 2: Image & Text -->
-    <div class="image-text-section">
+    <div class="image-text-section fade-in">
       <div class="image-container">
         <img src="https://github.com/MasoodahGeorge/nodePics/blob/main/pexels-2375361-10768164.jpg?raw=true" alt="Crochet Plushies">
       </div>
@@ -21,18 +25,18 @@
           joy and whimsy to every home. Each doll is carefully designed to be a lasting companion.
         </p>
         <router-link to="/products">
-        <button>Explore Our Collection</button>
+          <button>Explore Our Collection</button>
         </router-link>
       </div>
     </div>
 
     <!-- Section 3: Real Craftsmanship -->
-    <div class="text-banner">
+    <div class="text-banner fade-in">
       <h3>Real Craftsmanship. Handmade with Love.</h3>
     </div>
 
     <!-- Section 4: Image & Text -->
-    <div class="image-text-section reverse">
+    <div class="image-text-section reverse fade-in">
       <div class="text-container">
         <h3>From Our Hearts to Your Home</h3>
         <p>
@@ -40,7 +44,7 @@
           for crochet shines through in every detail, ensuring that your plushie is truly special.
         </p>
         <router-link to="/contact">
-        <button>Contact Us</button>
+          <button>Contact Us</button>
         </router-link>
       </div>
       <div class="image-container">
@@ -48,11 +52,27 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import Spinner from '../components/SpinnerComp.vue';
 export default {
   name: "AboutView",
+  components: {
+    Spinner
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  mounted() {
+    // Simulate data loading with a timeout
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000); // Adjust the timeout duration as needed
+  }
 };
 </script>
 
@@ -82,9 +102,6 @@ export default {
 .image-text-section {
   display: flex;
   align-items: center;
-
-  /* justify-content: space-between; */
-  /* padding: 2rem 0; */
 }
 
 .reverse {
@@ -132,5 +149,19 @@ export default {
 
 .text-banner h3 {
   color: #3f3f3f;
+}
+
+/* Animation styles */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

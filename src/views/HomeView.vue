@@ -1,6 +1,12 @@
 <template>
+
   <div class="home-sec">
-    <div class="text-section">
+    <div v-if="isLoading" class="spinner-container">
+      <Spinner :isLoading="isLoading"></Spinner>
+    </div>
+    <div v-else>
+    <!-- Text Section -->
+    <div class="text-section fade-in">
       <h1>Welcome to Amigurumi!</h1>
       <p class="slogan">Where Every Loop Is a Little Piece of Joy!</p>
       <div class="button-group">
@@ -14,7 +20,7 @@
     </div>
 
     <!-- Service Section -->
-    <div class="service-section">
+    <div class="service-section fade-in">
       <div class="service-item">
         <img
           src="https://github.com/MasoodahGeorge/nodePics/blob/main/homeimg%20(1).png?raw=true"
@@ -39,7 +45,7 @@
     </div>
 
     <!-- Background Image with Overlaying Text -->
-    <div class="background-section">
+    <div class="background-section fade-in">
       <div class="overlay-text">
         <h2>The Timeless Appeal of Handcrafted Treasures</h2>
         <p>
@@ -49,7 +55,7 @@
     </div>
 
     <!-- Info Section -->
-    <div class="info-section">
+    <div class="info-section fade-in">
       <h2>Find Your Next Cuddly Companion</h2>
       <br />
       <h4>Visit us at</h4>
@@ -71,7 +77,7 @@
     </div>
 
     <!-- Image Collage -->
-    <div class="container-fluid">
+    <div class="container-fluid fade-in">
       <div class="container-fullwidth">
         <div class="row no-gutters">
           <div class="col">
@@ -113,12 +119,30 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
+import Spinner from '../components/SpinnerComp.vue';
+
 export default {
   name: "HomeView",
+  components:{
+    Spinner
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  mounted() {
+    // Simulate data loading with a timeout
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000); // Adjust the timeout duration as needed
+  }
 };
+
 </script>
 
 <style scoped>
@@ -215,7 +239,7 @@ export default {
 /* BACKGROUND IMAGE SECTION */
 .background-section {
   background-image: url("https://github.com/MasoodahGeorge/nodePics/blob/main/abc.jpg?raw=true");
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   width: 100%;
   height: 90vh;
@@ -307,5 +331,19 @@ h4 {
   width: 100%;
   height: 50vh;
   object-fit: cover;
+}
+
+/* Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
