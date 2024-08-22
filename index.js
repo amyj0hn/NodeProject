@@ -1,3 +1,4 @@
+import cors from 'cors'
 import { userRouter, express } from "./controller/userController.js"
 import {productRouter} from "./controller/productController.js"
 import path from "path";
@@ -21,7 +22,8 @@ app.use(
     express.json(),
     express.urlencoded({
         extended:true
-    })
+    }),
+    cors()
 )
 
 // Routers
