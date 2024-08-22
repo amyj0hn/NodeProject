@@ -97,6 +97,8 @@
   }
   .form-control {
     flex: 1;
+    margin-right: 10px;
+    padding: 10px;
     border: 1px solid #ccc;
     color: rgb(69, 69, 69);
   }

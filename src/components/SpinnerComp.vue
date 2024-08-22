@@ -28,7 +28,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Optional: Dark overlay */
+  background: tan;
   z-index: 9999; /* Ensure spinner is on top of other content */
 }
 
