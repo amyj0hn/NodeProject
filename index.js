@@ -1,6 +1,7 @@
 import cors from 'cors'
 import { userRouter, express } from "./controller/userController.js"
 import {productRouter} from "./controller/productController.js"
+import { errorHandling } from './middleware/ErrorHandling.js';
 import path from "path";
 // Create an express app
 const app = express();
@@ -28,14 +29,26 @@ app.use(
 
 // Routers
 app.use('/Users', userRouter)
-app.use('/User', userRouter)
 app.use('/Products', productRouter)
-app.use('/Product', productRouter)
 
 // Endpoint
 app.get("^/$|/NodeProject", (req, res) => {
     res.status(200).sendFile(path.resolve("./static/html/index.html"));
 })
+
+// any endpoint that we did not create will return this.
+app.get('*', (req, res) => {        
+    res.json({
+      status: 404,
+      msg: 'Resource not found'
+    })
+  })
+app.use(errorHandling)
+
+
+
+
+
 
 // Start the server
 app.listen(port, () => {
