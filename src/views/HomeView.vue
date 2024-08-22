@@ -1,5 +1,4 @@
 <template>
-
   <div class="home-sec">
     <div v-if="isLoading" class="spinner-container">
       <Spinner :isLoading="isLoading"></Spinner>
