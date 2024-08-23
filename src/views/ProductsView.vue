@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div class="container">
         <div class="row">
             <h2 class="display-2">Products</h2>
@@ -32,11 +31,10 @@
         <div v-else>
             <Spinner />
         </div>
-=======
+    </div>
   <div class="container">
     <div class="row">
       <h2 class="display-2">Products</h2>
->>>>>>> 32746195b5e5158de350adfeb09398a2ef1ea07a
     </div>
 
     <!-- Search, Category Filter, and Sort Controls -->
@@ -99,17 +97,11 @@ const searchQuery = ref("");
 const sortOrder = ref("asc");
 const selectedCategory = ref("");
 
-<<<<<<< HEAD
-onMounted(()=> {    
-    store.dispatch('fetchProducts')
-})
-=======
 // Fetch products and categories when component is mounted
 onMounted(() => {
   store.dispatch("fetchProducts");
   fetchCategories();
 });
->>>>>>> 32746195b5e5158de350adfeb09398a2ef1ea07a
 
 // Function to fetch categories from API
 async function fetchCategories() {
