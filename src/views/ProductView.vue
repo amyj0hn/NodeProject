@@ -23,6 +23,7 @@
         <div v-else>
             <Spinner/>
         </div>
+    </div>
 =======
   <div class="container">
     <!-- Breadcrumbs -->
