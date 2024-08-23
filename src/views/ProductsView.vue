@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="container">
         <div class="row">
             <h2 class="display-2">Products</h2>
@@ -31,27 +32,117 @@
         <div v-else>
             <Spinner />
         </div>
+=======
+  <div class="container">
+    <div class="row">
+      <h2 class="display-2">Products</h2>
+>>>>>>> 32746195b5e5158de350adfeb09398a2ef1ea07a
     </div>
+
+    <!-- Search, Category Filter, and Sort Controls -->
+    <div class="controls mb-4">
+      <!-- Search Input -->
+      <input type="text" v-model="searchQuery" placeholder="Search products..." class="form-control me-2" />
+
+      <!-- Category Filter -->
+      <select v-model="selectedCategory" class="form-select me-2">
+        <option value="">All Categories</option>
+        <option v-for="category in categories" :key="category.id" :value="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+
+      <!-- Sort Order -->
+      <select v-model="sortOrder" class="form-select">
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+      </select>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="row gap-2 justify-content-center my-2" id="productgrid" v-if="filteredAndSortedProducts.length">
+      <Card v-for="product in filteredAndSortedProducts" :key="product.prodID" class="card">
+        <template #cardHeader>
+          <img :src="product.prodUrl" loading="lazy" class="img-fluid" :alt="product.prodName" />
+        </template>
+        <template #cardBody>
+          <h5 class="card-title fw-bold">
+            {{ product.prodName }}
+          </h5>
+          <p class="lead"><span> Amount </span>: R{{ product.amount }}</p>
+          <div class="button-wrapper d-md-flex d-block justify-content-between">
+            <router-link :to="`/product/${product.prodID}`">
+              <button class="btn btn-outline-dark me-2">View</button>
+            </router-link>
+          </div>
+        </template>
+      </Card>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div v-else>
+      <Spinner />
+    </div>
+  </div>
 </template>
 
 <script setup>
-import  Card from '@/components/CardComp.vue'
-import Spinner from '@/components/SpinnerComp.vue'
-import { computed, onMounted } from 'vue'
-import { useStore } from 'vuex' 
+import Card from "@/components/CardComp.vue";
+import Spinner from "@/components/SpinnerComp.vue";
+import { computed, onMounted, ref } from "vue";
+import { useStore } from "vuex";
 
-const store = useStore()
-const products = computed(
-    () => store.state.products
-)
+const store = useStore();
+const products = computed(() => store.state.products || []);
+const categories = ref([]);
+const searchQuery = ref("");
+const sortOrder = ref("asc");
+const selectedCategory = ref("");
 
+<<<<<<< HEAD
 onMounted(()=> {    
     store.dispatch('fetchProducts')
 })
+=======
+// Fetch products and categories when component is mounted
+onMounted(() => {
+  store.dispatch("fetchProducts");
+  fetchCategories();
+});
+>>>>>>> 32746195b5e5158de350adfeb09398a2ef1ea07a
 
+// Function to fetch categories from API
+async function fetchCategories() {
+  try {
+    const response = await fetch("https://nodeeomp-sf1q.onrender.com/categories");
+    if (!response.ok) throw new Error("Failed to fetch categories");
+    categories.value = await response.json();
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    categories.value = []; // Empty array if fetching fails
+  }
+}
 
+// Computed property to filter and sort products based on user input
+const filteredAndSortedProducts = computed(() => {
+  // Filter products by search query and selected category
+  let filtered = products.value.filter((product) =>
+    product.prodName.toLowerCase().includes(searchQuery.value.toLowerCase()) &&
+    (selectedCategory.value === "" || product.categoryId === selectedCategory.value)
+  );
+
+  // Sort filtered products by price
+  return filtered.sort((a, b) =>
+    sortOrder.value === "asc" ? a.amount - b.amount : b.amount - a.amount
+  );
+});
 </script>
-<style>
+
+<style scoped>
+.lead {
+  color: #333;
+}
+
 .container {
   padding-top: 80px;
 }
@@ -75,16 +166,31 @@ onMounted(()=> {
 
 .img-fluid {
   width: 100%;
-  height: auto; 
+  height: auto;
   display: block;
   object-fit: cover;
   border-bottom: 1px solid #ddd;
 }
 
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-control,
+.form-select {
+  flex: 1;
+  max-width: 200px;
+  margin-right: 10px;
+}
+
 .button-wrapper {
   display: flex;
   justify-content: space-between;
-  /* gap: 10px; */
   margin-top: 10px;
 }
 
@@ -99,10 +205,20 @@ onMounted(()=> {
   #productgrid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-  
+
   .card {
     padding: 10px;
   }
-}
 
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-control,
+  .form-select {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+}
 </style>

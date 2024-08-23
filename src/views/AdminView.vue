@@ -99,6 +99,50 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+    </main>
+  </template>
+  
+  <script setup>
+  import { ref, onMounted } from 'vue';
+  import { useStore } from 'vuex';
+  
+  const store = useStore();
+  const products = ref([]);
+  const newProduct = ref({
+    prodName: '',
+    Category: '',
+    amount: 0,
+    prodUrl: ''
+  });
+  const currentProduct = ref({});
+  
+  const fetchProducts = async () => {
+    await store.dispatch('fetchProducts');
+    products.value = store.state.products;
+  };
+  
+  const handleAddProduct = async () => {
+    await store.dispatch('addAProduct', newProduct.value);
+    products.value = store.state.products;
+    newProduct.value = { prodName: '', Category: '', amount: 0, prodUrl: '' };
+  };
+  
+  const handleEditProduct = (product) => {
+    currentProduct.value = { ...product };
+  };
+  
+  // const handleUpdateProduct = async () => {
+  //   await store.dispatch('updateProduct', currentProduct.value);
+  //   products.value = store.state.products;
+  // };
+  
+  const handleDeleteProduct = async (prodID) => {
+    await store.dispatch('deleteProduct', prodID);
+    products.value = store.state.products;
+  };
+>>>>>>> 32746195b5e5158de350adfeb09398a2ef1ea07a
 
       <!-- Edit Product Modal -->
       <div

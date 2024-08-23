@@ -36,7 +36,7 @@
                 joy and whimsy to every home. Each doll is carefully designed to be a lasting companion.
               </p>
               <router-link to="/products">
-                <button>Explore Our Collection</button>
+                <button class="btn btn-outline-dark me-2">Explore Our Collection</button>
               </router-link>
             </div>
           </div>
@@ -64,7 +64,7 @@
               for crochet shines through in every detail, ensuring that your plushie is truly special.
             </p>
             <router-link to="/contact">
-              <button>Contact Us</button>
+              <button class="btn btn-outline-dark me-2">Contact Us</button>
             </router-link>
           </div>
         </div>

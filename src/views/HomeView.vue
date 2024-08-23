@@ -10,10 +10,10 @@
       <p class="slogan">Where Every Loop Is a Little Piece of Joy!</p>
       <div class="button-group">
         <router-link to="/products" class="button-link">
-          <button>Shop Now</button>
+          <button class="btn btn-outline-dark me-2">Shop Now</button>
         </router-link>
         <router-link to="/about" class="button-link">
-          <button>Learn More</button>
+          <button class="btn btn-outline-dark me-2">Learn More</button>
         </router-link>
       </div>
     </div>
