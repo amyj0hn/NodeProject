@@ -13,13 +13,13 @@
                         {{ product.prodName }}
                     </h5>
                     <p class="lead">
-                        <span class="text-success fw-bold">
+                        <span>
                             Amount
                         </span>: R{{ product.amount }}</p>
                     <div class="button-wrapper d-md-flex d-block justify-content-between">
                         <!-- { name: 'product', params: { id: product.prodID } } -->
                         <router-link :to="`/product/${product.prodID}`">
-                            <button class="btn btn-success">
+                            <button class="btn btn-outline-dark me-2">
                                 View
                             </button>
                         </router-link>
@@ -46,13 +46,15 @@ const products = computed(
 
 onMounted(()=> {
     console.log('there');
-    
     store.dispatch('fetchProducts')
 })
 
-
 </script>
 <style>
+.lead{
+    color: #333;
+}
+
 .container {
   padding-top: 80px;
 }
