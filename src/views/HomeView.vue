@@ -1,5 +1,4 @@
 <template>
-
   <div class="home-sec">
     <div v-if="isLoading" class="spinner-container">
       <Spinner :isLoading="isLoading"></Spinner>
@@ -307,6 +306,9 @@ h4 {
 }
 
 /* IMAGE COLLAGE */
+.container-fluid{
+  background-color: tan;
+}
 .container-fullwidth {
   width: 100%;
   margin: 0 auto;

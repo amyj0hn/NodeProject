@@ -165,7 +165,7 @@ export default {
 }
 
 .text-banner {
-  background-color: #f9e4cf;
+  background-color: tan;
   padding: 3rem 1rem;
 }
 
