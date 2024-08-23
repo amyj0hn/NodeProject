@@ -65,7 +65,7 @@ onMounted(() => {
 
 <style>
 .container {
-  margin-top: 30px;
+  margin-top: 60px;
   padding: 20px;
 }
 
