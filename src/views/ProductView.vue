@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div class="container">
         <div class="row">
             <h2 class="display-2">Product Details</h2>
@@ -24,12 +23,10 @@
             <Spinner/>
         </div>
     </div>
-=======
   <div class="container">
     <!-- Breadcrumbs -->
     <div v-if="product" class="breadcrumb mb-4">
       <router-link to="/" style="text-decoration: none; color: #333;">Home</router-link> / {{ product.prodName }}
->>>>>>> 32746195b5e5158de350adfeb09398a2ef1ea07a
     </div>
 
     <!-- Product Details Section -->
