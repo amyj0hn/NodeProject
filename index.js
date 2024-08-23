@@ -28,7 +28,9 @@ app.use(
 )
 
 // Routers
+app.use('/User', userRouter)
 app.use('/Users', userRouter)
+app.use('/Product', productRouter)
 app.use('/Products', productRouter)
 
 // Endpoint
