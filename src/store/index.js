@@ -29,7 +29,9 @@ export default createStore({
     },
     setProduct(state, value) {
       state.product = value;
+      
     },
+    
   },
   actions: {
     // Users

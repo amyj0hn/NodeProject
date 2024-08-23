@@ -12,7 +12,10 @@
 
                 <template #cardBody>
                     <h5 class="card-title">{{ product.prodName }}</h5>
+                    <p class="card-text" v-if="product.prodDescription">{{ product.prodDescription }}</p>
+                    <p class="card-text" v-else>No description available.</p>
                     <p class="lead"><span class="text-success fw-bold">Amount</span>: R{{ product.amount }}</p>
+
                 </template>
             </Card>
         </div>

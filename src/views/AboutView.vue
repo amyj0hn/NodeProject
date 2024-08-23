@@ -144,6 +144,11 @@ export default {
 }
 
 .text-container h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #3f3f3f;
@@ -185,5 +190,32 @@ export default {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Media queries */
+/* Add this to your existing CSS */
+@media (max-width: 768px) {
+  .image-text-section {
+    flex-direction: column;
+  }
+  .image-text-section .image-container {
+    margin-bottom: 20px;
+  }
+  .image-text-section .text-container {
+    margin-top: 20px;
+  }
+  .image-text-section.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .image-text-section .image-container {
+  width: 100%;
+}
+
+.image-text-section .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 }
 </style>

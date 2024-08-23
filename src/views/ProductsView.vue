@@ -16,8 +16,9 @@
                         <span class="text-success fw-bold">
                             Amount
                         </span>: R{{ product.amount }}</p>
+                        <p class="card-text" v-if="product.prodDescription">{{ product.prodDescription }}</p>
+                        <p class="card-text" v-else>No description available.</p>
                     <div class="button-wrapper d-md-flex d-block justify-content-between">
-                        <!-- { name: 'product', params: { id: product.prodID } } -->
                         <router-link :to="`/product/${product.prodID}`">
                             <button class="btn btn-success">
                                 View
@@ -44,9 +45,7 @@ const products = computed(
     () => store.state.products
 )
 
-onMounted(()=> {
-    console.log('there');
-    
+onMounted(()=> {    
     store.dispatch('fetchProducts')
 })
 
