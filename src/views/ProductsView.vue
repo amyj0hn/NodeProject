@@ -17,7 +17,8 @@
                             Amount
                         </span>: R{{ product.amount }}</p>
                     <div class="button-wrapper d-md-flex d-block justify-content-between">
-                        <router-link :to="{ name: 'product', params: { id: product.prodID } }">
+                        <!-- { name: 'product', params: { id: product.prodID } } -->
+                        <router-link :to="`/product/${product.prodID}`">
                             <button class="btn btn-success">
                                 View
                             </button>

@@ -143,8 +143,8 @@
   };
   
   const handleEditProduct = (product) => {
-    currentProduct.value = { ...product };
-  };
+    Object.assign(currentProduct.value, product);  
+};
   
   const handleUpdateProduct = async () => {
     await store.dispatch('updateProduct', currentProduct.value);

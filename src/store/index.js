@@ -177,6 +177,8 @@ export default createStore({
       }
     },
     async fetchProduct(context, id) {
+      console.log("Hi");
+      
       try {
         const { result, msg } = await (
           await axios.get(`${apiURL}product/${id}`)

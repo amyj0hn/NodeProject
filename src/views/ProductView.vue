@@ -35,6 +35,7 @@ const product = computed(
 )
 
 onMounted(()=>{
+
     store.dispatch('fetchProduct', route.params.id)
 }
 )
