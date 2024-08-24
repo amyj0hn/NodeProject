@@ -2,7 +2,7 @@ import { connection as db } from "../config/index.js";
 import { hash } from "bcrypt";
 
 class Products{
-    getProducts(req, res){
+    fetchProducts(req, res){
             try {
               const strQry = `
                   SELECT 
@@ -30,7 +30,7 @@ class Products{
             }
           };
 
-    getRecentProducts(req, res){
+    fetchRecentProducts(req, res){
       try {
         const strQry = `
             SELECT *
@@ -53,7 +53,7 @@ class Products{
       }
     }
 
-    getAProduct(req,res){
+    fetchAProduct(req,res){
         try {
             const strQry = `
         SELECT 

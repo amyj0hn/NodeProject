@@ -9,17 +9,17 @@ productRouter.use(bodyParser.json())
 
 // All products
 productRouter.get('/', (req,res)=>{
-    products.getProducts(req,res)
+    products.fetchProducts(req,res)
 })
 
 // Recent products
 productRouter.get('/recent', (req,res)=>{
-    products.getRecentProducts(req,res)
+    products.fetchRecentProducts(req,res)
 })
 
 // Single product
 productRouter.get('/:id', (req,res)=>{
-    products.getAProduct(req,res)
+    products.fetchAProduct(req,res)
 })
 
 // Add/ Create product

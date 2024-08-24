@@ -1,4 +1,4 @@
-import cors from 'cors'
+import cors from  'cors';
 import { userRouter, express } from "./controller/userController.js"
 import {productRouter} from "./controller/productController.js"
 import { errorHandling } from './middleware/ErrorHandling.js';
