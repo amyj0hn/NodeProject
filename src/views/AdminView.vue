@@ -213,16 +213,14 @@
                   mt-2
                   @click="handleEditProduct(product)"
                   data-bs-toggle="modal"
-                  data-bs-target="#editProductModal"
-                >
+                  data-bs-target="#editProductModal">
                   Edit
                 </button>
               </td>
               <td>
                 <button
                   class="btn btn-danger"
-                  @click="handleDeleteProduct(product.prodID)"
-                >
+                  @click="handleDeleteProduct(product.prodID)">
                   Delete
                 </button>
               </td>

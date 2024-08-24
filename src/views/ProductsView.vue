@@ -155,7 +155,6 @@ const filteredAndSortedProducts = computed(() => {
 }
 
 @media (max-width: 576px) {
-  /* Styles for smaller screens */
   #productgrid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
