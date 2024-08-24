@@ -11,7 +11,8 @@ class Products{
                   quantity, 
                   amount, 
                   Category, 
-                  prodUrl
+                  prodUrl,
+                  prodDescription
                   FROM Products;
                   `
               db.query(strQry, (err, results) => {
@@ -61,7 +62,8 @@ class Products{
         quantity, 
         amount, 
         Category, 
-        prodUrl
+        prodUrl,
+        prodDescription
         FROM Products
         WHERE prodID = ${req.params.id};
         `
