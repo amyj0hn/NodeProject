@@ -17,7 +17,7 @@
         </option>
       </select>
 
-      <!-- Sortr -->
+      <!-- Sort -->
       <select v-model="sortOrder" class="form-select">
         <option value="asc">Price: Low to High</option>
         <option value="desc">Price: High to Low</option>

@@ -29,7 +29,6 @@ export default createStore({
     },
     setProduct(state, value) {
       state.product = value;
-      
     },
     
   },
@@ -222,10 +221,8 @@ export default createStore({
     async updateProduct(context, payload) {
       try {
         const { msg } = await (
-          await axios.patch(`${apiURL}product/${payload.prodID}`, payload.data)
+          await axios.patch(`${apiURL}product/${payload.prodID}`, payload)
         ).data;
-        console.log(payload);
-        
         if (msg) {
           context.dispatch("fetchProducts");
           toast.success(`${msg}`, {
