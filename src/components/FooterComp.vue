@@ -6,7 +6,7 @@
         <div class="col-md-4" id="news">
           <h5>Newsletter</h5>
           <p>Want to stay up to date with all the latest & newest products? Subscribe to our channel!</p>
-          <form action="https://formspree.io/f/your-form-id" method="POST">
+          <form action="https://formspree.io/f/mpzvvdbv" method="POST">
             <div class="form-group">
               <label for="email">Email :</label>
               <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
@@ -21,8 +21,8 @@
           <p>123-456-7890</p>
           <p>info@mysite.com</p>
           <address>
-            500 Terry Francine St.<br>
-            San Francisco, CA 94158
+            500 Landsdowne St.<br>
+            Landsdowne, WC 7780
           </address>
         </div>
 
@@ -50,6 +50,7 @@ export default {
   name: 'FooterComp'
 }
 </script>
+
 
 <style scoped>
 .footer-comp {

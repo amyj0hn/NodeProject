@@ -31,7 +31,6 @@
 
     <!-- Product Details Section -->
     <div class="row justify-content-between" v-if="product">
-      <!-- Image on the Left -->
       <div class="col-md-6">
         <img
           :src="product.prodUrl"
@@ -65,7 +64,7 @@
       </div>
     </div>
 
-    <!-- Loading Spinner -->
+    <!-- Spinner -->
     <div v-else>
       <Spinner />
     </div>

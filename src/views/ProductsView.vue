@@ -4,12 +4,12 @@
       <h2 class="display-2">Products</h2>
     </div>
 
-    <!-- Search, Category Filter, and Sort Controls -->
+    <!-- Filters -->
     <div class="controls mb-4">
-      <!-- Search Input -->
+      <!-- Search -->
       <input type="text" v-model="searchQuery" placeholder="Search products..." class="form-control me-2" />
 
-      <!-- Category Filter -->
+      <!-- Category -->
       <select v-model="selectedCategory" class="form-select me-2">
         <option value="">All Categories</option>
         <option v-for="category in categories" :key="category.id" :value="category.id">
@@ -17,14 +17,14 @@
         </option>
       </select>
 
-      <!-- Sort Order -->
+      <!-- Sortr -->
       <select v-model="sortOrder" class="form-select">
         <option value="asc">Price: Low to High</option>
         <option value="desc">Price: High to Low</option>
       </select>
     </div>
 
-    <!-- Products Grid -->
+    <!-- Products -->
     <div class="row gap-2 justify-content-center my-2" id="productgrid" v-if="filteredAndSortedProducts.length">
       <Card v-for="product in filteredAndSortedProducts" :key="product.prodID" class="card">
         <template #cardHeader>
@@ -44,7 +44,7 @@
       </Card>
     </div>
 
-    <!-- Loading Spinner -->
+    <!-- Spinner -->
     <div v-else>
       <Spinner />
     </div>
@@ -64,13 +64,11 @@ const searchQuery = ref("");
 const sortOrder = ref("asc");
 const selectedCategory = ref("");
 
-// Fetch products and categories when component is mounted
 onMounted(() => {
   store.dispatch("fetchProducts");
   fetchCategories();
 });
 
-// Function to fetch categories from API
 async function fetchCategories() {
   try {
     const response = await fetch("https://nodeeomp-sf1q.onrender.com/categories");
@@ -78,19 +76,16 @@ async function fetchCategories() {
     categories.value = await response.json();
   } catch (error) {
     console.error("Error fetching categories:", error);
-    categories.value = []; // Empty array if fetching fails
+    categories.value = [];
   }
 }
 
-// Computed property to filter and sort products based on user input
 const filteredAndSortedProducts = computed(() => {
-  // Filter products by search query and selected category
   let filtered = products.value.filter((product) =>
     product.prodName.toLowerCase().includes(searchQuery.value.toLowerCase()) &&
     (selectedCategory.value === "" || product.categoryId === selectedCategory.value)
   );
 
-  // Sort filtered products by price
   return filtered.sort((a, b) =>
     sortOrder.value === "asc" ? a.amount - b.amount : b.amount - a.amount
   );
