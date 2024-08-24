@@ -55,20 +55,18 @@
 
     <!-- Info Section -->
     <div class="info-section fade-in">
-      <h2 class="display-4">Find Your Next Cuddly Companion</h2>
-      <br />
-      <h4>Visit us at</h4>
+      <h2 class="section-title">Come visit us.</h2>
       <div class="row justify-content-center info-content">
-        <div class="col-md-4 info-block">
-          <h3>Our Studio</h3>
-          <p>123 Yarn Loop Lane<br />Knittington, CA 94000</p>
+        <div class="col-md-4 info-block text-center">
+          <h4>Address</h4>
+          <p>500 Landsdowne St.<br />Landsdowne, WC 7780</p>
         </div>
-        <div class="col-md-4 divider"></div>
-        <div class="col-md-4 info-block">
-          <h3>Studio Hours</h3>
+        <div class="col-md-1 divider"></div>
+        <div class="col-md-4 info-block text-center">
+          <h4>Opening Hours</h4>
           <p>
-            Mon - Fri: 10am - 5pm<br />
-            Saturday: 11am - 3pm<br />
+            Mon - Fri: 9am - 6pm<br />
+            Saturday: 10am - 2pm<br />
             Sunday: Closed
           </p>
         </div>
@@ -135,10 +133,9 @@ export default {
     };
   },
   mounted() {
-    // Simulate data loading with a timeout
     setTimeout(() => {
       this.isLoading = false;
-    }, 3000); // Adjust the timeout duration as needed
+    }, 3000);
   }
 };
 
@@ -161,8 +158,8 @@ export default {
   color: #ffffff;
   min-height: 100vh;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
-  background-blend-mode: darken; /* Optional: Blend the overlay with the image */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
 }
 
 .text-section h1 {
@@ -215,7 +212,7 @@ export default {
 .service-section {
   display: flex;
   justify-content: center;
-  background-color: #ac866d; /* Brighter pink section */
+  background-color: #ac866d;
   padding: 3% 0;
 }
 
@@ -241,8 +238,8 @@ export default {
   align-items: center;
   padding-right: 5%;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
-  background-blend-mode: darken; /* Optional: Blend the overlay with the image */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
 }
 
 .overlay-text {
@@ -264,46 +261,48 @@ export default {
 /* INFO SECTION */
 .info-section {
   text-align: center;
-  background-color: #d2b48c;
+  background-color: #f9f0e6;
   padding: 3%;
 }
 
-.info-section h2,
-h4 {
+.section-title {
+  font-size: 2rem;
   font-weight: bold;
-  color: #363636;
+  color: #3a3a3a;
+  margin-bottom: 2rem;
 }
 
 .info-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2%;
 }
 
-.info-block {
-  text-align: left;
-}
-
-.info-block h3 {
+.info-block h4 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 3%;
+  margin-bottom: 0.5rem;
   color: #474747;
 }
 
 .info-block p {
   font-size: 1rem;
   line-height: 1.6;
-  margin: 0;
   color: #474747;
+  margin: 0;
 }
 
 .divider {
   width: 1px;
-  height: 8rem;
+  height: 80px;
   background-color: #474747;
+  margin: 0 2rem;
 }
+
+.info-block {
+  padding: 0 1rem;
+}
+
 
 /* IMAGE COLLAGE */
 .container-fluid{
