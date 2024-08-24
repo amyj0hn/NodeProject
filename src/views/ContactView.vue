@@ -111,10 +111,9 @@ export default {
     };
   },
   mounted() {
-    // Simulate data loading with a timeout
     setTimeout(() => {
       this.isLoading = false;
-    }, 3000); // Adjust the timeout duration as needed
+    }, 3000);
   }
 };
 </script>

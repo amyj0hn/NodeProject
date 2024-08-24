@@ -29,7 +29,7 @@ export default {
   width: 100%;
   height: 100%;
   background: tan;
-  z-index: 9999; /* Ensure spinner is on top of other content */
+  z-index: 9999;
 }
 
 .spinner {

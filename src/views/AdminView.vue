@@ -1,19 +1,18 @@
 <template>
   <main class="container-fluid">
     <div class="row">
-    <h2 class="display-2">Admin</h2>
-    </div>
+      <h2 class="display-2">Admin</h2>
 
-    <!-- Add button on admin page -->
-    <div>
-      <button
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#addProductModal"
-      >
-        <i class="bi bi-plus-circle-fill"></i> Add Item
-      </button>
-    </div>
+      <!-- Add button on admin page -->
+      <div>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#addProductModal"
+        >
+          <i class="bi bi-plus-circle-fill"></i> Add Item
+        </button>
+      </div>
 
       <!-- Add Product Modal -->
       <div
@@ -100,6 +99,91 @@
         </div>
       </div>
 
+      <!-- Edit Product Modal -->
+      <div
+        class="modal fade"
+        id="editProductModal"
+        tabindex="-1"
+        aria-labelledby="editProductModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editProductModalLabel">
+                Edit Product
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Form to edit product -->
+              <form @submit.prevent="handleEditProduct">
+                <div class="mb-3">
+                  <label for="editProductName" class="form-label"
+                    >Product Name</label
+                  >
+                  <input
+                    v-model="currentProduct.prodName"
+                    type="text"
+                    class="form-control"
+                    id="editProductName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editDescription" class="form-label"
+                    >Description</label
+                  >
+                  <input
+                    v-model="currentProduct.prodDescription"
+                    type="text"
+                    class="form-control"
+                    id="editDescription"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editCategory" class="form-label">Category</label>
+                  <textarea
+                    v-model="currentProduct.Category"
+                    class="form-control"
+                    id="editCategory"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="editAmount" class="form-label">Amount</label>
+                  <input
+                    v-model="currentProduct.amount"
+                    type="number"
+                    class="form-control"
+                    id="editAmount"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editImgUrl" class="form-label">Image URL</label>
+                  <input
+                    v-model="currentProduct.prodUrl"
+                    type="text"
+                    class="form-control"
+                    id="editImgUrl"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Save Changes
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Edit Product Modal -->
     <div
       class="modal fade"
@@ -212,16 +296,14 @@
                   mt-2
                   @click="handleEditProduct(product)"
                   data-bs-toggle="modal"
-                  data-bs-target="#editProductModal"
-                >
+                  data-bs-target="#editProductModal">
                   Edit
                 </button>
               </td>
               <td>
                 <button
                   class="btn btn-danger"
-                  @click="handleDeleteProduct(product.prodID)"
-                >
+                  @click="handleDeleteProduct(product.prodID)">
                   Delete
                 </button>
               </td>
@@ -428,7 +510,6 @@ const products = ref([]);
 const newProduct = ref({
   prodName: "",
   Category: "",
-  prodDescription: "",
   amount: 0,
   prodUrl: "",
 });
@@ -444,10 +525,12 @@ data
 const handleAddProduct = async () => {
   await store.dispatch("addAProduct", newProduct.value);
   products.value = store.state.products;
-  newProduct.value = { prodName: "", Category: "", prodDescription: "", amount: 0, prodUrl: "" };
+  newProduct.value = { prodName: "", Category: "", amount: 0, prodUrl: "" };
 };
 
 const handleEditProduct = async (product) => {
+  await store.dispatch('updateProduct', currentProduct.value);
+  products.value = store.state.products;
   Object.assign(currentProduct.value, product);
 };
 

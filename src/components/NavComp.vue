@@ -49,7 +49,6 @@ export default {
 }
 
 .navbar-nav .nav-link {
-  /* font-weight: bold; */
   color: rgb(84, 84, 84) !important;
   margin-right: 3rem;
   position: relative;
@@ -72,6 +71,6 @@ export default {
 }
 
 .navbar-nav .nav-link.router-link-active {
-  color: rgb(84, 84, 84) !important; /* Keep the original color when active */
+  color: rgb(84, 84, 84) !important;
 }
 </style>
