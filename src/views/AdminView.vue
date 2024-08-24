@@ -127,7 +127,7 @@
                   >Product Name</label
                 >
                 <input
-                  v-model="currentProduct.prodName"
+                  v-model="payload.prodName"
                   type="text"
                   class="form-control"
                   id="editProductName"
@@ -149,7 +149,7 @@
               <div class="mb-3">
                 <label for="editCategory" class="form-label">Category</label>
                 <textarea
-                  v-model="currentProduct.Category"
+                  v-model="payload.Category"
                   class="form-control"
                   id="editCategory"
                   required
@@ -158,7 +158,7 @@
               <div class="mb-3">
                 <label for="editAmount" class="form-label">Amount</label>
                 <input
-                  v-model="currentProduct.amount"
+                  v-model="payload.amount"
                   type="number"
                   class="form-control"
                   id="editAmount"
@@ -168,7 +168,7 @@
               <div class="mb-3">
                 <label for="editImgUrl" class="form-label">Image URL</label>
                 <input
-                  v-model="currentProduct.prodUrl"
+                  v-model="payload.prodUrl"
                   type="text"
                   class="form-control"
                   id="editImgUrl"
@@ -185,7 +185,8 @@
     </div>
 
       <!-- Products Table -->
-      <div class="table-responsive">
+      <div class="table-responsive" v-if ="products && products.length">
+
         <table class="table">
           <thead>
             <tr>
@@ -412,6 +413,16 @@ import { ref, onMounted } from "vue";
 import { useStore } from "vuex";
 
 // Products
+const payload = {
+
+  prodName: "",
+  Category: "",
+  prodDescription: "",
+  amount:null ,
+  prodUrl: "",
+
+
+}
 const store = useStore();
 const products = ref([]);
 const newProduct = ref({
@@ -427,6 +438,8 @@ const fetchProducts = async () => {
   await store.dispatch("fetchProducts");
   products.value = store.state.products;
 };
+
+data
 
 const handleAddProduct = async () => {
   await store.dispatch("addAProduct", newProduct.value);
@@ -498,6 +511,8 @@ const handleDeleteUser = async (userId) => {
     console.error("Error deleting user:", error);
   }
 };
+
+
 
 onMounted(fetchUsers);
 

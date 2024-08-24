@@ -35,8 +35,6 @@
             {{ product.prodName }}
           </h5>
           <p class="lead"><span> Amount </span>: R{{ product.amount }}</p>
-          <p class="card-text" v-if="product.prodDescription">{{ product.prodDescription }}</p>
-          <p class="card-text" v-else>No description available.</p>
           <div class="button-wrapper d-md-flex d-block justify-content-between">
             <router-link :to="`/product/${product.prodID}`">
               <button class="btn btn-outline-dark me-2">View</button>
