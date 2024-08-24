@@ -2,7 +2,7 @@
   <main class="container-fluid">
     <div class="row">
       <h2 class="display-2">Admin</h2>
-
+</div>
       <!-- Add button on admin page -->
       <div>
         <button
@@ -130,8 +130,7 @@
                   <input
                     v-model="currentProduct.prodName"
                     type="text"
-                    class="form-control"
-                    id="editProductName"
+                    class="form-control editProductName"
                     required
                   />
                 </div>
@@ -142,8 +141,7 @@
                   <input
                     v-model="currentProduct.prodDescription"
                     type="text"
-                    class="form-control"
-                    id="editDescription"
+                    class="form-control editDescription"
                     required
                   />
                 </div>
@@ -151,8 +149,7 @@
                   <label for="editCategory" class="form-label">Category</label>
                   <textarea
                     v-model="currentProduct.Category"
-                    class="form-control"
-                    id="editCategory"
+                    class="form-control editCategory"
                     required
                   ></textarea>
                 </div>
@@ -161,8 +158,7 @@
                   <input
                     v-model="currentProduct.amount"
                     type="number"
-                    class="form-control"
-                    id="editAmount"
+                    class="form-control editAmount"
                     required
                   />
                 </div>
@@ -171,8 +167,7 @@
                   <input
                     v-model="currentProduct.prodUrl"
                     type="text"
-                    class="form-control"
-                    id="editImgUrl"
+                    class="form-control editImgUrl"
                     required
                   />
                 </div>
@@ -213,8 +208,7 @@
                 <input
                   v-model="payload.prodName"
                   type="text"
-                  class="form-control"
-                  id="editProductName"
+                  class="form-control editProductName"
                   required
                 />
               </div>
@@ -223,10 +217,9 @@
                   >Description</label
                 >
                 <input
-                  v-model="currentProduct.prodDescription"
+                  v-model="payload.prodDescription"
                   type="text"
-                  class="form-control"
-                  id="editDescription"
+                  class="form-control editDescription"
                   required
                 />
               </div>
@@ -234,8 +227,7 @@
                 <label for="editCategory" class="form-label">Category</label>
                 <textarea
                   v-model="payload.Category"
-                  class="form-control"
-                  id="editCategory"
+                  class="form-control editCategory"
                   required
                 ></textarea>
               </div>
@@ -244,8 +236,7 @@
                 <input
                   v-model="payload.amount"
                   type="number"
-                  class="form-control"
-                  id="editAmount"
+                  class="form-control editAmount"
                   required
                 />
               </div>
@@ -254,8 +245,7 @@
                 <input
                   v-model="payload.prodUrl"
                   type="text"
-                  class="form-control"
-                  id="editImgUrl"
+                  class="form-control editImgUrl"
                   required
                 />
               </div>
@@ -519,8 +509,6 @@ const fetchProducts = async () => {
   await store.dispatch("fetchProducts");
   products.value = store.state.products;
 };
-
-data
 
 const handleAddProduct = async () => {
   await store.dispatch("addAProduct", newProduct.value);
