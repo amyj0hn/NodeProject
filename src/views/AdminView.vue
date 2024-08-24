@@ -58,8 +58,7 @@
                   <input
                     v-model="newProduct.amount"
                     type="text"
-                    class="form-control"
-                    id="editDescription"
+                    class="form-control editDescription"
                     required
                   />
                 </div>
@@ -229,7 +228,6 @@
           </tbody>
         </table>
       </div>
-    </div>
 
     <!-- Add User Button -->
     <div>
@@ -279,10 +277,9 @@
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input
-                    v-model="newUser.email"
+                    v-model="newUser.emailAdd"
                     type="email"
-                    class="form-control"
-                    id="email"
+                    class="form-control email"
                     required
                   />
                 </div>
@@ -382,8 +379,8 @@
           <tbody>
             <tr v-for="(user, index) in users" :key="user.id">
               <td>{{ index + 1 }}</td>
-              <td>{{ user.username }}</td>
-              <td>{{ user.email }}</td>
+              <td>{{ user.userName }}</td>
+              <td>{{ user.emailAdd }}</td>
               <td>
                 <button
                   class="btn btn-warning"
@@ -455,9 +452,9 @@ const apiUrl = "https://nodeproject-0wx0.onrender.com/";
 
 const users = ref([]);
 const newUser = ref({
-  username: "",
-  email: "",
-  password: "",
+  userName: "",
+  emailAdd: "",
+  userPass: "",
 });
 const currentUser = ref({});
 
@@ -474,7 +471,7 @@ const handleAddUser = async () => {
   try {
     await axios.post(`${apiUrl}users`, newUser.value);
     await fetchUsers();
-    newUser.value = { username: "", email: "", password: "" };
+    newUser.value = { userName: "", emailAdd: "", userPass: "" };
   } catch (error) {
     console.error("Error adding user:", error);
   }
@@ -482,12 +479,16 @@ const handleAddUser = async () => {
 
 const handleEditUser = async () => {
   try {
+    console.log("Editing user:", currentUser.value);
     await axios.put(`${apiUrl}users/${currentUser.value.id}`, currentUser.value);
+    console.log("User updated successfully!");
     await fetchUsers();
   } catch (error) {
     console.error("Error editing user:", error);
+    throw new Error(`Unable to update user: ${error.message}`);
   }
 };
+
 
 const handleDeleteUser = async (userId) => {
   try {
