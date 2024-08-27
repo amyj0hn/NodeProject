@@ -27,6 +27,7 @@ app.use(
 // Routers
 app.use('/Users', userRouter)
 app.use('/Products', productRouter)
+
 // Endpoint
 app.get("^/$|/NodeProject", (req, res) => {
     res.status(200).sendFile(path.resolve("./static/html/index.html"));
